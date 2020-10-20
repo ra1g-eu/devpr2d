@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb642f14-1b70-4751-adb0-7ac1518b1490" name="Default Changelist" comment="" />
+    <list default="true" id="b7ad56aa-719e-4599-a6b8-3bbf45c80ad8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +10,7 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="ProjectId" id="1iv0WI2ypCxHncqKGEmXn6mDrMB" />
+  <component name="ProjectId" id="1j8a8SDLLZcD4lsCuTcEaLovOnA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -23,12 +23,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cb642f14-1b70-4751-adb0-7ac1518b1490" name="Default Changelist" comment="" />
-      <created>1602772787591</created>
+      <changelist id="b7ad56aa-719e-4599-a6b8-3bbf45c80ad8" name="Default Changelist" comment="" />
+      <created>1603188012380</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1602772787591</updated>
-      <workItem from="1602772788667" duration="5431000" />
+      <updated>1603188012380</updated>
+      <workItem from="1603188013475" duration="8312000" />
     </task>
     <servers />
   </component>
@@ -36,21 +36,13 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="667" y="168" key="#PHP" timestamp="1602775097262">
+    <state x="775" y="248" key="NewPhpClassDialog" timestamp="1603191474953">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="667" y="168" key="#PHP/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602775097262" />
-    <state x="336" y="366" key="#SQL_Dialects" timestamp="1602777240715">
+    <state x="775" y="248" key="NewPhpClassDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1603191474953" />
+    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1603195402335">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="336" y="366" key="#SQL_Dialects/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602777240715" />
-    <state x="790" y="248" key="NewPhpClassDialog" timestamp="1602775024922">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="790" y="248" key="NewPhpClassDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602775024922" />
-    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1602778852970">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="794" y="448" key="NewPhpFileDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602778852970" />
+    <state x="794" y="448" key="NewPhpFileDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1603195402335" />
   </component>
 </project>

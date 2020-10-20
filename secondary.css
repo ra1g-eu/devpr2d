@@ -1,0 +1,36 @@
+/* changelog section */
+.changelog {
+  background-color: var(--bg-color);
+  padding: 2rem 0;
+}
+
+.changelog__item {
+  display: flex;
+}
+
+.changelog__meta {
+  flex-basis: 25%;
+}
+
+.changelog__meta small {
+  color: var(--primary-color-light);
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+.changelog__title {
+  margin-bottom: 0;
+}
+
+.changelog__callout {
+  margin: 3rem auto 2rem auto;
+  text-align: center;
+}
+/* layout */
+.wrapper {
+  margin: 0 auto;
+  width: 70%;
+}
+.section__title {
+  color: #432E30;
+}
