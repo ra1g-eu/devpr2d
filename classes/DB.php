@@ -75,12 +75,20 @@ class DB
         }
 
     }
+    /** function to load menu */
         public function getMenuItems(){
             $sql = "SELECT * FROM menu ORDER BY menuorder";
             $stmt = $this->connection->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+/** function to load changelog items for peeporun2d */
+    public function getChangelogprItems(){
+        $sql = "SELECT * FROM changelogpr ORDER BY id";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function Register($username, $password, $email)
     {

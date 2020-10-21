@@ -18,6 +18,8 @@
 
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
+        $isloggedin = false;
+
 
         if ($username == "") {
             $login_error_message = 'Username field is required!';
@@ -28,6 +30,7 @@
             if($id > 0)
             {
                 $_SESSION['id'] = $id; // Set Session
+                $_SESSION['logout'] = false;
                 header("Location: myprofile.php"); // Redirect user to the profile.php
             }
             else
