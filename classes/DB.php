@@ -82,9 +82,43 @@ class DB
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-/** function to load changelog items for peeporun2d */
+        /** test **/
+    public function getPRCHItems($id){
+        try{
+            $query = $this->connection->prepare("SELECT * FROM changelogpr WHERE id=:id");
+            $query->bindParam("id", $id, PDO::PARAM_STR);
+            $query->execute();
+                if ($query->rowCount() > 0) {
+                    return $query->fetch(PDO::FETCH_ASSOC);
+                }
+            } catch (PDOException $e) {
+        exit($e->getMessage());
+        }
+    }
+    /**  load images to image gallery **/
+    public function getImageItems(){
+        $sql = "SELECT * FROM imagegallery ORDER BY idimage";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    /** function to load changelog items for peeporun2d */
     public function getChangelogprItems(){
-        $sql = "SELECT * FROM changelogpr ORDER BY id";
+        $sql = "SELECT * FROM changelogpr ORDER BY version DESC";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    /** function to load changelog items for ra1glauncher */
+    public function getChangelogrlItems(){
+        $sql = "SELECT * FROM changelogrl ORDER BY id";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    /** function to load changelog items for website */
+    public function getChangelogsiteItems(){
+        $sql = "SELECT * FROM changelogsite ORDER BY id";
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

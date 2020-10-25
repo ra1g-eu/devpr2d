@@ -6,13 +6,16 @@
   <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <?php include_once ("menu.php"); ?>
+      <?php include_once ("menu.php");
+      $imageitems = $db->getImageItems();
+      ?>
 </nav>
-
 <div class="container">
+    <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
+        <a class="btn btn-primary btn-lg" style="float: right;" href="imageditor.php?image=<?php echo 'IMGADD'; ?>"><i class="fa fa-page"></i>Add new</a>
+    <?php } ?>
 <div class="jumbotron">
   <h1 class="display-5">Image Gallery</h1>
-
 	  <script>
 $(document).ready(function() {
 $('.fancybox').fancybox();
@@ -21,39 +24,22 @@ $('.fancybox').fancybox();
 </script>
 
 <div class="row">
+    <?php foreach($imageitems as $key => $imageitem){
+    ?>
 	<div class="col-lg-4">
         <div class="bs-component">
 			<div class="card border-secondary mb-3" style="max-width: 20rem;">
-			<div class="card-header">RA1G Launcher <button type="button" class="btn btn-danger btn-sm" style="float: right;">X</button></div>
-			<a class="fancybox" href="imgs/ra1gL1.png" data-fancybox-group="gallery" title=""><img src="imgs/ra1gL1.png"  style="width:100%" alt="" /></a>
+			<div class="card-header"><?php echo $imageitem['name']; ?><?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
+                    <a href="imageeditor.php?image=<?php echo $imageitem['idimage']; ?>" type="submit" name="btnUpdateIMG" class="btn btn-info btn-sm" style="float: right;"><i class="fa fa-pencil"></i></a>
+                    <a href="imageeditor.php?imagedelete=<?php echo $imageitem['idimage']; ?>" type="submit" name="btnDeleteIMG" class="btn btn-danger btn-sm" style="float: right;"><i class="fa fa-close"></i></a>
+                <?php }?>
+            </div>
+			<a class="fancybox" href="<?php echo $imageitem['file_path']; ?>" data-fancybox-group="gallery" title=""><img src="<?php echo $imageitem['file_path']; ?>"  style="width:100%" alt="" /></a>
 			</div>
 		</div>
     </div>
-  
-  	<div class="col-lg-4">
-		<div class="bs-component">  
-			<div class="card border-secondary mb-3" style="max-width: 20rem;">
-			<div class="card-header">PR2D Main menu</div>
-			<a class="fancybox" href="imgs/pr2d1.png" data-fancybox-group="gallery" title=""><img src="imgs/pr2d1.png"  style="width:100%" alt="" /></a>
-			</div>
-		</div>
-    </div>
-	  	<div class="col-lg-4">
-		<div class="bs-component">  
-			<div class="card border-secondary mb-3" style="max-width: 20rem;">
-			<div class="card-header">PR2D Select level</div>
-			<a class="fancybox" href="imgs/pr2d2.png" data-fancybox-group="gallery" title=""><img src="imgs/pr2d2.png"  style="width:100%" alt="" /></a>
-			</div>
-		</div>
-    </div>
-	  	<div class="col-lg-4">
-		<div class="bs-component">  
-			<div class="card border-secondary mb-3" style="max-width: 20rem;">
-			<div class="card-header">PR2D How to play</div>
-			<a class="fancybox" href="imgs/pr2d3.png" data-fancybox-group="gallery" title=""><img src="imgs/pr2d3.png"  style="width:100%" alt="" /></a>
-			</div>
-		</div>
-    </div>
+    <?php } ?>
+
 
 </div>
 
