@@ -14,6 +14,7 @@
     $changelogitems = $db->getChangelogprItems();
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $success = "";
+        $failure = "";
         if (isset($_GET['peeporundelete'])) {
             $connection = new PDO($dsn, $username, $password, $options);
             $id = $_GET['peeporundelete'];

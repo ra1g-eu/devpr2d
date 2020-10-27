@@ -32,7 +32,7 @@
         <div class="card border-primary mb-3">
             <div class="card-header"><h4>ID</h4></div>
             <div class="card-body">
-                <input type="text" class="form-control" name="idname" id="idnamef" placeholder="<?php if(!empty($prch['id'])){ echo $prch['id'];} else { echo 'ID'; } ?>" disabled/>
+                <input type="text" class="form-control" name="idname" id="idnamef" placeholder="ID" value="<?php if(!empty($prch['id'])){ echo $prch['id'];} else { echo 'ID'; } ?>" readonly=""/>
             </div>
         </div>
         <div class="card border-primary mb-3">
@@ -54,17 +54,22 @@
             </div>
         </div>
         <div class="card border-primary mb-5">
-            <div class="card-header"><h4>Choose category</h4></div>
+            <div class="card-header"><h4>Choose category
+                    <div class="form-check" style="float: right;">
+                        <input class="form-check-input" type="checkbox" value=""  required="required">
+                        <h5>Confirm that you understand which category is selected</h5>
+                    </div></h4>
+                </div>
             <div class="card-body">
                 <select class="custom-select" name="category">
-                    <option value="PR">PeepoRun2D</option>
-                    <option value="RL">RA1G Launcher</option>
-                    <option value="WEB">Website</option>
+                    <option value="PR"<?php if($peeporun) echo 'selected=""'; ?>>PeepoRun2D</option>
+                    <option value="RL"<?php if($ra1glauncher) echo 'selected=""'; ?>>RA1G Launcher</option>
+                    <option value="WEB"<?php if($websitechangelog) echo 'selected=""'; ?>>Website</option>
                 </select>
             </div>
         </div>
         <?php if($updating){ ?>
-            <a href="changelogeditor.php?updateselected=<?php echo $prch['id']; ?>" type="submit" class="btn btn-info btn-lg" >Update <i class="fa fa-pencil"></i></a>
+            <button type="submit" class="btn btn-info btn-lg" name="btnUpdate">Update <i class="fa fa-pencil"></i></button>
             <a href="changelogeditor.php?deleteselected=<?php echo $prch['id']; ?>" type="submit" class="btn btn-danger btn-lg" >Delete <i class="fa fa-close"></i></a>
         <?php } else {?>
         <input type="submit" class="btn btn-success btn-lg" value="Add new" name="btnAddNew"/>

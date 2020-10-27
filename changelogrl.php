@@ -15,6 +15,7 @@
     $changelogitems = $db->getChangelogrlItems();
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $success = "";
+        $failure = "";
         if (isset($_GET['ra1glauncherdelete'])) {
             $connection = new PDO($dsn, $username, $password, $options);
             $id = $_GET['ra1glauncherdelete'];
