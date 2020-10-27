@@ -42,15 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $updating = true;
             $websitechangelog = true;
         }
-    } catch (PDOException $error) {
-        $failure = "<br>" . $error->getMessage();
-    }
-}
-/** DELETE CHANGELOGS -------> FUNGUJE **/
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    try{
+        //delete
         if (isset($_GET['deleteselected'])) {
-            if ($peeporun = true) {
+            if ($peeporun == true) {
                 $id = $_GET['deleteselected'];
                 $sql = "DELETE FROM changelogpr WHERE id = :id";
                 $statement = $connection->prepare($sql);
@@ -59,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 $success = "Changelog deleted!";
                 header("refresh:2;url=changelogpr.php");
                 $peeporun = false;
-            }if ($ra1glauncher = true) {
+            } else if ($ra1glauncher == true) {
                 $id = $_GET['deleteselected'];
                 $sql = "DELETE FROM changelogrl WHERE id = :id";
                 $statement = $connection->prepare($sql);
@@ -68,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 $success = "Changelog deleted!";
                 header("refresh:2;url=changelogrl.php");
                 $ra1glauncher = false;
-            } if ($websitechangelog = true) {
+            } else if ($websitechangelog == true) {
                 $id = $_GET['deleteselected'];
                 $sql = "DELETE FROM changelogsite WHERE id = :id";
                 $statement = $connection->prepare($sql);
@@ -78,8 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 $websitechangelog = false;
                 header("refresh:2;url=changelogsite.php");
             }
-        } else {
-            header("url=index.php");
         }
     } catch (PDOException $error) {
         $failure = "<br>" . $error->getMessage();
@@ -119,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $websitechangelog = false;
             $peeporun = false;
             $ra1glauncher = false;
-            var_dump($statement->debugDumpParams());
+            //var_dump($statement->debugDumpParams());
             header("refresh:2;url=index.php");
         }
     } catch (PDOException $error) {
