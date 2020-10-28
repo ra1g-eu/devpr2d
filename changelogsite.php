@@ -49,15 +49,13 @@
                     <div class="changelog__meta">
                         <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
                             <a href="changelogeditor.php?websitechangelog=<?php echo $changelogitem['id']; ?>" type="submit" name="btnUpdateWEB" class="btn btn-info btn-sm" style="float: right;"><i class="fa fa-pencil"></i></a>
-                            <a href="changelogpr.php?websitechangelogdelete=<?php echo $changelogitem['id']; ?>" type="submit" name="btnDeleteWEB" class="btn btn-danger btn-sm" style="float: right;"><i class="fa fa-close"></i></a>
+                            <a href="changelogpr.php?websitechangelogdelete=<?php echo $changelogitem['id']; ?>" type="submit" onClick='return confirmSubmit()' name="btnDeleteWEB" class="btn btn-danger btn-sm" style="float: right;"><i class="fa fa-close"></i></a>
                         <?php }?>
-                        <h4 class="changelog__title"><?php echo $changelogitem['version']; ?></h4>
-                        <small class="changelog__date"><?php echo $changelogitem['date']; ?></small>
+                        <h4 class="changelog__title" id="chversion"><span class="badge badge-info">v<?php echo $changelogitem['version']; ?></span></h4>
+                        <h5 class="changelog__date" id="chdate"><span class="badge badge-dark"><?php echo $changelogitem['date']; ?></span></h5>
                     </div>
                     <div class="changelog__detail">
-                        <ul>
                             <?php echo $changelogitem['text']; ?>
-                        </ul>
                     </div>
                 </div>
                 <hr class="my-4">

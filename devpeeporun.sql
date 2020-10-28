@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hostiteľ: 127.0.0.1
--- Čas generovania: Ne 25.Okt 2020, 20:11
+-- Čas generovania: St 28.Okt 2020, 15:44
 -- Verzia serveru: 10.4.14-MariaDB
 -- Verzia PHP: 7.2.34
 
@@ -39,10 +39,12 @@ CREATE TABLE `changelogpr` (
 --
 
 INSERT INTO `changelogpr` (`id`, `date`, `version`, `text`) VALUES
-(1, '2020-02-14', '0.0.1.1', '<li>Added Main Menu music, can be toggled ON/OFF</li>\r\n<li>Added new level number 5</li>\r\n<li>Added a button in the top left that redirects to the game\'s homepage</li>\r\n'),
-(2, '2020-02-12', '0.0.0.8', '<li>New timer that counts in seconds and stops when the level is completed</li>\r\n<li>New behaviour of \'completing a level\' game mechanic: now level ends when all collectibles are collected</li>\r\n<li>Added \'Level Complete\' screen</li>\r\n\r\n'),
-(4, '2020-02-12', '0.0.0.7', '<li>Added score counter</li>\r\n<li>New \'How to Play\' screen added, accessed by a button</li>\r\n<li>New \'Select a level\' screen added, accessed by a button</li>\r\n<li>Four new hand-built levels added</li>\r\n<li>Added \'Level Complete\' screen after finishing a level</li>\r\n<li>Main Menu created</li>\r\n<li>Added \'gems\' and \'wooden chests\' to every map as collectibles that count toward the score</li>\r\n\r\n'),
-(5, '2020-02-10', '0.0.0.1', '<li>First game draft</li>\r\n<li>Run & idle animations created</li>\r\n<li>Tile-based, 2D map created (now used as level 01)</li>\r\n<li>Basic player controls (going left & right, jumping)</li>\r\n\r\n');
+(2, '12.02.2020', '0.0.0.8', '<ul>\r\n<li>New timer that counts in seconds and stops when the level is completed</li>\r\n<li>New behaviour of \'completing a level\' game mechanic: now level ends when all collectibles are collected</li>\r\n<li>Added \'Level Complete\' screen</li>\r\n</ul>'),
+(4, '12.02.2020', '0.0.0.7', '<ul>\r\n<li>Added score counter</li>\r\n<li>New \'How to Play\' screen added, accessed by a button</li>\r\n<li>New \'Select a level\' screen added, accessed by a button</li>\r\n<li>Four new hand-built levels added</li>\r\n<li>Added \'Level Complete\' screen after finishing a level</li>\r\n<li>Main Menu created</li>\r\n<li>Added \'gems\' and \'wooden chests\' to every map as collectibles that count toward the score</li>\r\n</ul>'),
+(5, '10.02.2020', '0.0.0.1', '<ul>\r\n<li>First game draft</li>\r\n<li>Run &amp; idle animations created</li>\r\n<li>Tile-based, 2D map created (now used as level 01)</li>\r\n<li>Basic player controls (going left &amp; right, jumping)</li>\r\n</ul>'),
+(18, '14.2.2020', '0.0.1.1', '<ul>\r\n<li>Added Main Menu music, can be toggled ON/OFF</li>\r\n<li>Added new level number 5</li>\r\n<li>Added a button in the top left that redirects to the game\'s homepage</li>\r\n</ul>'),
+(22, '09.10.2020', '0.3.0-A5', '<ul>\r\n<li>New main menu</li>\r\n<li>Settings screen now fully working (preview in image gallery)</li>\r\n<li>Minor improvements/additions</li>\r\n</ul>'),
+(23, '06.10.2020', '0.3.0-A2', '<ul>\r\n<li>Minor changes</li>\r\n<li>Remake of the game started</li>\r\n</ul>');
 
 -- --------------------------------------------------------
 
@@ -62,10 +64,10 @@ CREATE TABLE `changelogrl` (
 --
 
 INSERT INTO `changelogrl` (`id`, `date`, `version`, `text`) VALUES
-(1, '2020-10-04', 'v4.10.20r1', '<li>Rewritten some text to be easier to understand</li>\r\n<li>Download system is now working again</li>\r\n<li>Launcher renamed & some images changed</li>\r\n<li>New version system</li>\r\n'),
-(2, '2020-02-14', '0.0.6', '<li>Version checking is now working</li>\r\n<li>Updating the game allowed only when a new version is detected</li>\r\n<li>Update files and game files are now inside the launcher installation folder (/launcherdata/)</li>\r\n\r\n'),
-(4, '2020-02-13', '0.0.5', '<li>Updating the game mechanic added</li>\r\n<li>Starting the game & exiting the launcher now working</li>\r\n<li>Exit button added</li>\r\n<li>Download status on main screen</li>\r\n\r\n'),
-(5, '2020-02-13', '0.0.1', '<li>Basic layout created</li>\r\n<li>Buttons for starting the game, downloading the game & updates added</li>\r\n<li>Working game file download mechanic</li>\r\n\r\n\r\n');
+(1, '04.10.2020', '0.1.0-A2', '<ul>\r\n<li>Rewritten some text to be easier to understand</li>\r\n<li>Download links inside the code are now working again</li>\r\n<li>Launcher renamed &amp; some images changed</li>\r\n<li>New version system</li>\r\n</ul>'),
+(2, '14.02.2020', '0.0.6', '<ul>\r\n<li>Version checking is now working</li>\r\n<li>Updating the game allowed only when a new version is detected</li>\r\n<li>Update files and game files are now inside the launcher installation folder (/launcherdata/)</li>\r\n</ul>'),
+(4, '13.02.2020', '0.0.5', '<ul>\r\n<li>Updating the game mechanic added</li>\r\n<li>Starting the game &amp; exiting the launcher now working</li>\r\n<li>Exit button added</li>\r\n<li>Download status on main screen</li>\r\n</ul>'),
+(5, '13.02.2020', '0.0.1', '<ul>\r\n<li>Basic layout created</li>\r\n<li>Buttons for starting the game, downloading the game &amp; updates added</li>\r\n<li>Working game file download mechanic</li>\r\n</ul>');
 
 -- --------------------------------------------------------
 
@@ -85,7 +87,8 @@ CREATE TABLE `changelogsite` (
 --
 
 INSERT INTO `changelogsite` (`id`, `date`, `version`, `text`) VALUES
-(1, '2020-10-01', '0.0.1', '<li>Added some content</li>\r\n<li>Created changelog pages</li>\r\n<li>Created image gallery</li>\r\n');
+(1, '04.10.2020', '0.0.1', '<ul><li>Website created on 1.10.2020</li>\r\n<li>Added some content</li>\r\n<li>Created changelog pages</li>\r\n<li>Created image gallery</li></ul>\r\n'),
+(6, '28.10.2020', '0.3.0-A2', '<ul>\r\n<li>Added tinyMCE text editor to changelog\'s textarea</li>\r\n<li>Register &amp; login system created</li>\r\n<li>System to dynamically add/delete/update changelogs now working</li>\r\n<li>Completely new simplistic design</li>\r\n<li>Image gallery system now 50% complete</li>\r\n</ul>');
 
 -- --------------------------------------------------------
 
@@ -226,7 +229,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pre tabuľku `changelogpr`
 --
 ALTER TABLE `changelogpr`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT pre tabuľku `changelogrl`
@@ -238,7 +241,7 @@ ALTER TABLE `changelogrl`
 -- AUTO_INCREMENT pre tabuľku `changelogsite`
 --
 ALTER TABLE `changelogsite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pre tabuľku `imagegallery`

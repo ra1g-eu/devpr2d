@@ -65,16 +65,14 @@
                         <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
 
                             <a href="changelogeditor.php?peeporun=<?php echo $changelogitem['id']; ?>" type="submit" name="btnUpdatePR" class="btn btn-info btn-sm" style="float: right;"><i class="fa fa-pencil"></i></a>
-                            <a href="changelogpr.php?peeporundelete=<?php echo $changelogitem['id']; ?>" type="submit" name="btnDeletePR" class="btn btn-danger btn-sm" style="float: right;"><i class="fa fa-close"></i></a>
+                            <a href="changelogpr.php?peeporundelete=<?php echo $changelogitem['id']; ?>" type="submit" onClick='return confirmSubmit()' name="btnDeletePR" class="btn btn-danger btn-sm" style="float: right;"><i class="fa fa-close"></i></a>
 
                         <?php }?>
-                        <h4 class="changelog__title" id="chversion"><?php echo $changelogitem['version']; ?></h4>
-                        <small class="changelog__date" id="chdate"><?php echo $changelogitem['date']; ?></small>
+                        <h4 class="changelog__title" id="chversion"><span class="badge badge-info">v<?php echo $changelogitem['version']; ?></span></h4>
+                        <h5 class="changelog__date" id="chdate"><span class="badge badge-dark"><?php echo $changelogitem['date']; ?></span></h5>
                     </div>
                     <div class="changelog__detail" id="chtext">
-                        <ul>
                             <?php echo $changelogitem['text']; ?>
-                        </ul>
                     </div>
                 </div>
                 <hr class="my-4">

@@ -1,5 +1,5 @@
 <?php
-include_once ("config.php");
+include_once("config.php");
 $updating = false;
 $peeporun = false;
 $ra1glauncher = false;
@@ -42,44 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $updating = true;
             $websitechangelog = true;
         }
-        //delete
-        if (isset($_GET['deleteselected'])) {
-            if ($peeporun == true) {
-                $id = $_GET['deleteselected'];
-                $sql = "DELETE FROM changelogpr WHERE id = :id";
-                $statement = $connection->prepare($sql);
-                $statement->bindValue(':id', $id);
-                $statement->execute();
-                $success = "Changelog deleted!";
-                header("refresh:2;url=changelogpr.php");
-                $peeporun = false;
-            } else if ($ra1glauncher == true) {
-                $id = $_GET['deleteselected'];
-                $sql = "DELETE FROM changelogrl WHERE id = :id";
-                $statement = $connection->prepare($sql);
-                $statement->bindValue(':id', $id);
-                $statement->execute();
-                $success = "Changelog deleted!";
-                header("refresh:2;url=changelogrl.php");
-                $ra1glauncher = false;
-            } else if ($websitechangelog == true) {
-                $id = $_GET['deleteselected'];
-                $sql = "DELETE FROM changelogsite WHERE id = :id";
-                $statement = $connection->prepare($sql);
-                $statement->bindValue(':id', $id);
-                $statement->execute();
-                $success = "Changelog deleted!";
-                $websitechangelog = false;
-                header("refresh:2;url=changelogsite.php");
-            }
-        }
     } catch (PDOException $error) {
         $failure = "<br>" . $error->getMessage();
     }
 }
-/** DELETE CHANGELOGS END **/
+/** LOAD CHANGELOGS END **/
 
-/** UPDATE CHANGELOGS -------> FUNGUJE **/
+/** UPDATE && DELETE CHANGELOGS -------> FUNGUJE **/
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         if (isset($_POST['btnUpdate'])) {
@@ -88,18 +57,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $date = $_POST['date'];
             $text = $_POST['changelogtext'];
             $ctgry = $_POST['category'];
-            if ($ctgry === 'WEB')
-            {
+            if ($ctgry === 'WEB') {
                 $statement = $connection->prepare("UPDATE changelogsite SET date=:date, version=:version, text=:text WHERE id=:id");
                 $success = "Website Changelog updated!";
             }
-            if ($ctgry === 'RL')
-            {
+            if ($ctgry === 'RL') {
                 $statement = $connection->prepare("UPDATE changelogrl SET date=:date, version=:version, text=:text WHERE id=:id");
                 $success = "Launcher Changelog updated!";
             }
-            if ($ctgry === 'PR')
-            {
+            if ($ctgry === 'PR') {
                 $statement = $connection->prepare("UPDATE changelogpr SET date=:date, version=:version, text=:text WHERE id=:id");
                 $success = "Game Changelog updated!";
             }
@@ -114,6 +80,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //var_dump($statement->debugDumpParams());
             header("refresh:2;url=index.php");
         }
+        /**   button btnDeleteCH   */
+        if(isset($_POST['btnDeleteCH'])){
+            $id = $_POST['idname'];
+            $ctgry = $_POST['category'];
+            if($ctgry === 'PR'){
+                $statement = $connection->prepare("DELETE FROM changelogpr WHERE id = :id");
+                $statement->bindValue(':id', $id);
+                $statement->execute();
+                $success = "Game Changelog deleted!";
+                header("refresh:2;url=changelogpr.php");
+                $peeporun = false;
+            }if($ctgry === 'RL'){
+                $statement = $connection->prepare("DELETE FROM changelogrl WHERE id = :id");
+                $statement->bindValue(':id', $id);
+                $statement->execute();
+                $success = "Launcher Changelog deleted!";
+                header("refresh:2;url=changelogrl.php");
+                $ra1glauncher = false;
+            }if($ctgry === 'WEB'){
+                $statement = $connection->prepare("DELETE FROM changelogsite WHERE id = :id");
+                $statement->bindValue(':id', $id);
+                $statement->execute();
+                $success = "Website Changelog deleted!";
+                $websitechangelog = false;
+                header("refresh:2;url=changelogsite.php");
+            }
+        }
     } catch (PDOException $error) {
         $failure = "<br>" . $error->getMessage();
         $websitechangelog = false;
@@ -121,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $ra1glauncher = false;
     }
 }
-/** UPDATE CHANGELOGS END **/
+/** UPDATE && DELETE CHANGELOGS END **/
 
 /** ADD NEW CHANGELOGS ---------> FUNGUJE */
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

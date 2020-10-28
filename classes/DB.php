@@ -111,14 +111,14 @@ class DB
     }
     /** function to load changelog items for ra1glauncher */
     public function getChangelogrlItems(){
-        $sql = "SELECT * FROM changelogrl ORDER BY id";
+        $sql = "SELECT * FROM changelogrl ORDER BY version DESC";
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     /** function to load changelog items for website */
     public function getChangelogsiteItems(){
-        $sql = "SELECT * FROM changelogsite ORDER BY id";
+        $sql = "SELECT * FROM changelogsite ORDER BY version DESC";
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

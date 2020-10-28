@@ -51,13 +51,11 @@
                             <a href="changelogeditor.php?ra1glauncher=<?php echo $changelogitem['id']; ?>" type="submit" name="btnUpdateRL" class="btn btn-info btn-sm" style="float: right;"><i class="fa fa-pencil"></i></a>
                             <a href="changelogrl.php?ra1glauncherdelete=<?php echo $changelogitem['id']; ?>" type="submit" name="btnDeleteRL" class="btn btn-danger btn-sm" style="float: right;"><i class="fa fa-close"></i></a>
                         <?php }?>
-                        <h4 class="changelog__title"><?php echo $changelogitem['version']; ?></h4>
-                        <small class="changelog__date"><?php echo $changelogitem['date']; ?></small>
+                        <h4 class="changelog__title" id="chversion"><span class="badge badge-info">v<?php echo $changelogitem['version']; ?></span></h4>
+                        <h5 class="changelog__date" id="chdate"><span class="badge badge-dark"><?php echo $changelogitem['date']; ?></span></h5>
                     </div>
                     <div class="changelog__detail">
-                        <ul>
                             <?php echo $changelogitem['text']; ?>
-                        </ul>
                     </div>
                 </div>
                 <hr class="my-4">

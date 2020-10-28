@@ -14,6 +14,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <?php include_once ("menu.php");
     require "changelogconfig.php";
+
     if(isset($_SESSION['id']) && ($user->role) == 'admin'){
     ?>
 </nav>
@@ -50,7 +51,7 @@
         <div class="card border-primary mb-3">
             <div class="card-header"><h4>Changelog text<a class="btn btn-info btn-sm" style="float: right;" href=""><i class="fa fa-page"></i>Add &ltli&gt tags</a></h4></div>
             <div class="card-body">
-                <textarea class="form-control" name="changelogtext" id="changelogtextf" placeholder="Add new changelog text"  required="required" pattern="[\s\S]*\S[\s\S]*" minlength="2"><?php if(!empty($prch['text'])){ echo $prch['text']; }?></textarea>
+                <textarea class="form-control" name="changelogtext" id="changelogtextf" placeholder="Add new changelog text"><?php if(!empty($prch['text'])){ echo $prch['text']; }?></textarea>
             </div>
         </div>
         <div class="card border-primary mb-5">
@@ -62,15 +63,21 @@
                 </div>
             <div class="card-body">
                 <select class="custom-select" name="category">
-                    <option value="PR"<?php if($peeporun) echo 'selected=""'; ?>>PeepoRun2D</option>
-                    <option value="RL"<?php if($ra1glauncher) echo 'selected=""'; ?>>RA1G Launcher</option>
-                    <option value="WEB"<?php if($websitechangelog) echo 'selected=""'; ?>>Website</option>
+                    <?php if($updating){ ?>
+                    <option value="PR"<?php if($peeporun) echo 'selected=""';  else { echo 'disabled=""'; } ?>>PeepoRun2D</option>
+                    <option value="RL"<?php if($ra1glauncher) echo 'selected=""'; else { echo 'disabled=""'; }?>>RA1G Launcher</option>
+                    <option value="WEB"<?php if($websitechangelog) echo 'selected=""';  else { echo 'disabled=""'; } ?>>Website</option>
+                    <?php } if(!$updating){ ?>
+                        <option value="PR">PeepoRun2D</option>
+                        <option value="RL">RA1G Launcher</option>
+                        <option value="WEB">Website</option>
+                    <?php } ?>
                 </select>
             </div>
         </div>
         <?php if($updating){ ?>
             <button type="submit" class="btn btn-info btn-lg" name="btnUpdate">Update <i class="fa fa-pencil"></i></button>
-            <a href="changelogeditor.php?deleteselected=<?php echo $prch['id']; ?>" type="submit" class="btn btn-danger btn-lg" >Delete <i class="fa fa-close"></i></a>
+            <button type="submit" name="btnDeleteCH" onClick='return confirmSubmit()' class="btn btn-danger btn-lg" >Delete <i class="fa fa-close"></i></button>
         <?php } else {?>
         <input type="submit" class="btn btn-success btn-lg" value="Add new" name="btnAddNew"/>
         <?php } ?>

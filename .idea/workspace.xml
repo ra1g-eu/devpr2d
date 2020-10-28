@@ -30,6 +30,11 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\devpr2d\css" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -46,7 +51,9 @@
       <workItem from="1603493303634" duration="1751000" />
       <workItem from="1603549065505" duration="14798000" />
       <workItem from="1603637611254" duration="11596000" />
-      <workItem from="1603806372943" duration="15406000" />
+      <workItem from="1603806372943" duration="15509000" />
+      <workItem from="1603834063870" duration="597000" />
+      <workItem from="1603889608580" duration="5659000" />
     </task>
     <servers />
   </component>
