@@ -2,8 +2,7 @@
 <html>
   <head>
 
-<?php
-include_once ("header.php"); ?>
+<?php include_once ("header.php"); ?>
 	    </head>
   <body>
 
@@ -37,8 +36,6 @@ include_once ("header.php"); ?>
       <?php } ?>
 
 </div>
-
-
-
+  <?php include_once ("footer.php"); ?>
   </body>
   </html>
