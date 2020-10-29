@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once ("classes/DB.php");
+include_once("classes/DB.php");
 use classes\DB;
 $db = new DB("localhost","root","","devpeeporun", 3306);
 $menuItems = $db->getMenuItems();
@@ -8,7 +8,7 @@ $menuItems = $db->getMenuItems();
 if(!empty($_SESSION["id"])){
     $user = $db->UserDetails($_SESSION['id']);
 }
- // get user details
+// get user details
 ?>
 <a class="navbar-brand" href="#">
     <?php if(empty($_SESSION["id"])) {
@@ -24,10 +24,10 @@ if(!empty($_SESSION["id"])){
 <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
         <?php foreach($menuItems as $key => $menuItem){
-        ?>
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo $menuItem['file_path']; ?>"><i class="<?php echo $menuItem['icon']; ?>"></i><?php echo $menuItem['meno']; ?></a>
-        </li>
+            ?>
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo $menuItem['file_path']; ?>"><i class="<?php echo $menuItem['icon']; ?>"></i><?php echo $menuItem['meno']; ?></a>
+            </li>
         <?php } ?>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Changelogs</a>
@@ -39,12 +39,12 @@ if(!empty($_SESSION["id"])){
         </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-<?php if(empty($_SESSION["id"])) {?>
-        <a class="nav-link btn btn-outline-success" href="register.php">Register</a>
-        <a class="nav-link btn btn-outline-secondary" href="login.php">Login</a>
+        <?php if(empty($_SESSION["id"])) {?>
+            <a class="nav-link btn btn-outline-success" href="register.php">Register</a>
+            <a class="nav-link btn btn-outline-secondary" href="login.php">Login</a>
         <?php } else { ?>
-        <a class="nav-link btn btn-outline-success" href="myprofile.php">My profile </a>
-        <a class="nav-link btn btn-outline-danger" href="logout.php">Logout</a>
+            <a class="nav-link btn btn-outline-success" href="myprofile.php">My profile </a>
+            <a class="nav-link btn btn-outline-danger" href="incl/logout.php">Logout</a>
         <?php } ?>
     </form>
 </div>

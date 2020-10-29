@@ -3,8 +3,8 @@
 <head>
 
     <?php
-    include_once ("header.php");
-    require "config.php";
+    include_once("header.php");
+    require "incl/config.php";
     if(isset($_SESSION['id']) && ($user->role) == 'basic'){
         header("Location: index.php");
     }?>
@@ -12,8 +12,8 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <?php include_once ("menu.php");
-    require "changelogconfig.php";
+    <?php include_once("menu.php");
+    require "incl/changelogconfig.php";
 
     if(isset($_SESSION['id']) && ($user->role) == 'admin'){
     ?>
@@ -21,7 +21,7 @@
 
 <div class="jumbotron">
     <h1 class="display-5">Changelog Editor -> <?php if($peeporun){echo 'PeepoRun2D';} else if($ra1glauncher){echo 'RA1G Launcher';} else if($websitechangelog){echo 'Website';} else {echo 'Add New';} ?></h1>
-    <?php include_once ("modal.php"); ?>
+    <?php include_once("incl/modal.php"); ?>
     <?php
     $admin_error_message = "";
     if ($admin_error_message != "") {
@@ -83,7 +83,7 @@
         <?php } ?>
     </form>
 </div>
-<?php include_once ("footer.php"); ?>
+<?php include_once("footer.php"); ?>
 </body>
 </html>
 <?php } ?>

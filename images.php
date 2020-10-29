@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
   <head>
-<?php include_once ("header.php"); ?>
+<?php include_once("header.php"); ?>
 	    </head>
   <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <?php include_once ("menu.php");
+      <?php include_once("menu.php");
       $imageitems = $db->getImageItems();
       ?>
 </nav>
@@ -45,6 +45,6 @@ $('.fancybox').fancybox();
 
 </div>
 </div>
-  <?php include_once ("footer.php"); ?>
+  <?php include_once("footer.php"); ?>
   </body>
   </html>

@@ -3,12 +3,16 @@
 <head>
 
     <?php
-    include_once ("header.php"); ?>
+    include_once("header.php");
+    if(empty($_SESSION["id"])){
+        header("Location: index.php");
+    }
+    ?>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <?php include_once ("menu.php"); ?>
+    <?php include_once("menu.php"); ?>
 </nav>
 <div class="container">
 <div class="jumbotron">
@@ -30,6 +34,6 @@
 
 </div>
 </div>
-<?php include_once ("footer.php"); ?>
+<?php include_once("footer.php"); ?>
 </body>
 </html>

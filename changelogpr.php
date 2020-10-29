@@ -3,14 +3,14 @@
 <head>
 
     <?php
-    include_once ("header.php");
-    require "config.php";
+    include_once("header.php");
+    require "incl/config.php";
     ?>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <?php include_once ("menu.php");
+    <?php include_once("menu.php");
     $changelogitems = $db->getChangelogprItems();
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $success = "";
@@ -30,31 +30,9 @@
 </nav>
 <div class="jumbotron">
     <h1 class="display-5">Changelog PeepoRun2D</h1>
-    <?php include_once ("modal.php"); ?>
+    <?php include_once("incl/modal.php"); ?>
     <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
         <a class="btn btn-primary btn-lg" style="float: right;" href="changelogeditor.php"><i class="fa fa-page"></i>Add new</a>
-    <?php } ?>
-    <?php if(isset($_GET['notify']) && $_GET['notify']) {
-        $message = "You've been logged out!";
-        ?>
-        <script>
-            $(function() {
-                $('#myModal').modal('show');
-            });
-        </script>
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title"><?php echo $message ?></h4>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     <?php } ?>
     <div class="changelog">
         <div class="wrapper">
@@ -80,6 +58,6 @@
         </div>
     </div>
 </div>
-<?php include_once ("footer.php"); ?>
+<?php include_once("footer.php"); ?>
 </body>
 </html>

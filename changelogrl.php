@@ -3,15 +3,15 @@
 <head>
 
     <?php
-    include_once ("header.php");
-    require "config.php";
+    include_once("header.php");
+    require "incl/config.php";
     ?>
 
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <?php include_once ("menu.php");
+    <?php include_once("menu.php");
     $changelogitems = $db->getChangelogrlItems();
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $success = "";
@@ -33,7 +33,7 @@
 
 <div class="jumbotron">
     <h1 class="display-5">Changelog RA1G Launcher</h1>
-    <?php include_once ("modal.php"); ?>
+    <?php include_once("incl/modal.php"); ?>
     <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
         <a class="btn btn-primary btn-lg" style="float: right;" href="changelogeditor.php"><i class="fa fa-page"></i>Add new</a>
     <?php } ?>
@@ -63,6 +63,6 @@
         </div>
     </div>
 </div>
-<?php include_once ("footer.php"); ?>
+<?php include_once("footer.php"); ?>
 </body>
 </html>
