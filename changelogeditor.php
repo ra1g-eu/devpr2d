@@ -14,7 +14,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <?php include_once("menu.php");
     require "incl/changelogconfig.php";
-
     if(isset($_SESSION['id']) && ($user->role) == 'admin'){
     ?>
 </nav>
@@ -49,7 +48,7 @@
             </div>
         </div>
         <div class="card border-primary mb-3">
-            <div class="card-header"><h4>Changelog text<a class="btn btn-info btn-sm" style="float: right;" href=""><i class="fa fa-page"></i>Add &ltli&gt tags</a></h4></div>
+            <div class="card-header"><h4>Changelog text</h4></div>
             <div class="card-body">
                 <textarea class="form-control" name="changelogtext" id="changelogtextf" placeholder="Add new changelog text"><?php if(!empty($prch['text'])){ echo $prch['text']; }?></textarea>
             </div>

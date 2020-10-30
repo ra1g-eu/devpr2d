@@ -18,4 +18,11 @@
         plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
         toolbar: 'undo redo | bold italic underline strikethrough | numlist bullist | forecolor backcolor removeformat | charmap | fullscreen  preview |link anchor codesample | ltr rtl',
     });
+    tinymce.init({
+        selector: 'textarea#fulltextf',
+        plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
+        toolbar: 'undo redo | bold italic underline strikethrough | numlist bullist | forecolor backcolor removeformat | charmap | fullscreen  preview |link anchor codesample | ltr rtl',
+        height: 600,
+        content_style: ".mce-content-body {font-size:14px}",
+    });
 </script>

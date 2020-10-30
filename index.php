@@ -35,7 +35,7 @@ require "incl/newsconfig.php";?>
                               <br>
                               <p class="lead"><?= stripslashes($article['news_short_description']); ?></p>
                   <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
-                      <a href="newseditor.php?id=<?php echo $article['news_id']; ?>" type="submit" name="btnUpdatePR" class="btn btn-info btn-sm" style="float: right;">EDIT <i class="fa fa-pencil"></i></a>
+                      <a href="newseditor.php?newseditid=<?php echo $article['news_id']; ?>" type="submit" name="btnUpdatePR" class="btn btn-info btn-sm" style="float: right;">EDIT <i class="fa fa-pencil"></i></a>
                       <a href="newseditor.php?iddelete=<?php echo $article['news_id']; ?>" type="submit" onClick='return confirmSubmit()' name="btnDeletePR" class="btn btn-danger btn-sm" style="float: right;">DELETE <i class="fa fa-close"></i></a>
                   <?php } ?>
               </div>

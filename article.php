@@ -43,14 +43,17 @@
             <h1 class="display-5" id="newstitle"><?= stripslashes($article['news_title']); ?></h1>
             <h4 class="changelog__title" id="newsauthor"><span class="badge badge-info">Author: <?= stripslashes($article['news_author']); ?></span></h4>
             <h5 class="changelog__date" id="newsdate"><span class="badge badge-dark"><?= $article['news_published_on'];?></span></h5>
-            <p class="lead mb-lg-5">
-                <?= stripslashes($article['news_full_content']); ?>
-            </p>
+            <br class="lead mb-lg-1">
+                <?= $article['news_full_content']; ?>
+            </br>
+
             Category: <a href="#" class="text-success"><?=stripslashes($article['news_category']); ?></a>
-            <a href="newseditor.php?id=" type="submit" name="btnUpdatePR" class="btn btn-info btn-sm"
-               style="float: right;"><i class="fa fa-pencil"></i></a>
-            <a href="newseditor.php?iddelete=" type="submit" onClick='return confirmSubmit()' name="btnDeletePR"
-               class="btn btn-danger btn-sm" style="float: right;"><i class="fa fa-close"></i></a>
+            <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
+            <a href="newseditor.php?newseditid=<?php echo $article['news_id']; ?>" type="submit" name="btnUpdatePR" class="btn btn-info btn-sm"
+               style="float: right;">Edit <i class="fa fa-pencil"></i></a>
+            <a href="newseditor.php?iddelete=<?php echo $article['news_id']; ?>" type="submit" onClick='return confirmSubmit()' name="btnDeletePR"
+               class="btn btn-danger btn-sm" style="float: right;">Delete <i class="fa fa-close"></i></a>
+            <?php } ?>
         </div>
         <?php else:?>
 

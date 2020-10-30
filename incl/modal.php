@@ -6,7 +6,7 @@
                     <h2 class="modal-title"><?php echo $success; echo $failure; ?></h2>
                 </div>
                 <div class="modal-body">
-                    <p><h4>Page will refresh in 2 seconds</h4></p>
+                    <p><h4>You will be redirected shortly</h4></p>
                 </div>
             </div>
         </div>
