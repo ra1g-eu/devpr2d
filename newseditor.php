@@ -19,7 +19,7 @@
 </nav>
 
 <div class="jumbotron">
-    <h1 class="display-5">News Editor</h1>
+    <h1 class="display-5">News Editor <h4><a class="badge badge-warning" href="article.php?newsid=<?= stripslashes($newsedit['news_id']); ?>">Go back to article</a></h4></h1>
     <?php include_once("incl/modal.php"); ?>
     <?php
     $admin_error_message = "";
@@ -44,7 +44,7 @@
         <div class="card border-primary mb-3">
             <div class="card-header"><h4>Author</h4></div>
             <div class="card-body">
-                <input type="text" class="form-control" name="author" id="authorf" placeholder="<?php if(!$updating) { echo $user->username; } ?>" value="<?php if(!empty($newsedit['news_author'])){ echo $newsedit['news_author']; }?>" required="required" readonly=""/>
+                <input type="text" class="form-control" name="author" id="authorf" placeholder="Author's name" value="<?php if(!$updating) { echo $user->username; } if(!empty($newsedit['news_author'])){ echo $newsedit['news_author']; }?>" required="required" readonly=""/>
             </div>
         </div>
         <div class="card border-primary mb-3">

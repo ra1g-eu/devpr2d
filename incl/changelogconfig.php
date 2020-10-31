@@ -88,21 +88,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $statement = $connection->prepare("DELETE FROM changelogpr WHERE id = :id");
                 $statement->bindValue(':id', $id);
                 $statement->execute();
-                $success = "Game Changelog deleted!";
+                $success = "Game Changelog removed!";
                 echo('<meta http-equiv="refresh" content="2;url=changelogpr.php">');
                 $peeporun = false;
             }if($ctgry === 'RL'){
                 $statement = $connection->prepare("DELETE FROM changelogrl WHERE id = :id");
                 $statement->bindValue(':id', $id);
                 $statement->execute();
-                $success = "Launcher Changelog deleted!";
+                $success = "Launcher Changelog removed!";
                 echo('<meta http-equiv="refresh" content="2;url=changelogrl.php">');
                 $ra1glauncher = false;
             }if($ctgry === 'WEB'){
                 $statement = $connection->prepare("DELETE FROM changelogsite WHERE id = :id");
                 $statement->bindValue(':id', $id);
                 $statement->execute();
-                $success = "Website Changelog deleted!";
+                $success = "Website Changelog removed!";
                 $websitechangelog = false;
                 echo('<meta http-equiv="refresh" content="2;url=changelogsite.php">');
             }

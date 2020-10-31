@@ -31,12 +31,12 @@ require "incl/newsconfig.php";?>
                   <?php foreach ($news as $key => $article) :?>
               <div class="alert alert-secondary mb-lg-5">
                               <h3><a class="" href="article.php?newsid=<?= $article['news_id']; ?>"><?= stripslashes($article['news_title']); ?></a></h3>
-                              <h6 ><span class="badge-primary"><?=$article['news_published_on']; ?> - <?= stripslashes($article['news_author']); ?> - Category: <a href="#" class="text-success"><?=stripslashes($article['news_category']); ?></a></span></h6>
+                              <h6 ><span class="badge-light"><?=$article['news_published_on']; ?> - <?= stripslashes($article['news_author']); ?> - <a href="#" class="text-success"><?=stripslashes($article['news_category']); ?></a></span></h6>
                               <br>
                               <p class="lead"><?= stripslashes($article['news_short_description']); ?></p>
                   <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
-                      <a href="newseditor.php?newseditid=<?php echo $article['news_id']; ?>" type="submit" name="btnUpdatePR" class="btn btn-info btn-sm" style="float: right;">EDIT <i class="fa fa-pencil"></i></a>
-                      <a href="newseditor.php?iddelete=<?php echo $article['news_id']; ?>" type="submit" onClick='return confirmSubmit()' name="btnDeletePR" class="btn btn-danger btn-sm" style="float: right;">DELETE <i class="fa fa-close"></i></a>
+                      <a href="newseditor.php?newseditid=<?php echo $article['news_id']; ?>" type="submit"  class="btn btn-info btn-sm" style="float: right;">EDIT <i class="fa fa-pencil"></i></a>
+                      <a href="newseditor.php?newsiddel=<?php echo $article['news_id']; ?>" type="submit" onClick='return confirmSubmit()' class="btn btn-danger btn-sm" style="float: right;">DELETE <i class="fa fa-close"></i></a>
                   <?php } ?>
               </div>
                       <hr class="my-lg-5">

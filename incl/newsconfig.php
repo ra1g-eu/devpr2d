@@ -46,6 +46,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             //var_dump($statement->debugDumpParams());
             $updating = true;
         }
+        /** NEWS DELETING WORKING */
+        if (isset($_GET['newsiddel'])) {
+            $id = $_GET['newsiddel'];
+            $sql = "DELETE FROM news WHERE news_id=:news_id";
+            $statement = $connection->prepare($sql);
+            $statement->bindValue(':news_id', $id);
+            $statement->execute();
+            $success = "Article successfully removed!";
+            echo('<meta http-equiv="refresh" content="2;url=index.php">');
+        }
+        /** NEWS DELETING KONIEC */
     } catch (PDOException $error) {
         $failure = "<br>" . $error->getMessage();
     }
@@ -81,6 +92,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $success = "Article successfully updated!";
             echo('<meta http-equiv="refresh" content="2;url=index.php">');
         }
+        /** NEWS UPDATING KONIEC */
+        /** ADD NEW ARTICLE */
+        if (isset($_POST['btnAddNewNews'])) {
+            $new_article = array(
+                "news_title" => $_POST['title'],
+                "news_author" => $_POST['author'],
+                "news_published_on" => $_POST['publish'],
+                "news_short_description" => $_POST['shortdesc'],
+                "news_full_content" => $_POST['fulltext'],
+                "news_category" => $_POST['newscat']
+            );
+            $sql = sprintf(
+                "INSERT INTO %s (%s) values (%s)",
+                "news",
+                implode(", ", array_keys($new_article)),
+                ":" . implode(", :", array_keys($new_article))
+            );
+            $statement = $connection->prepare($sql);
+            $statement->execute($new_article);
+            $success = "Article successfully added!";
+            echo('<meta http-equiv="refresh" content="2;url=index.php">');
+        }
+        /** ADD NEW ARTICLE KONIEC */
+        /** DELETE NEWS WHERE NEWS_ID */
+        if (isset($_POST['btnDeleteNews'])) {
+            $id = $_POST['newsid'];
+            $sql = "DELETE FROM news WHERE news_id=:news_id";
+            $statement = $connection->prepare($sql);
+            $statement->bindValue(':news_id', $id);
+            $statement->execute();
+            $success = "Article successfully removed!";
+            echo('<meta http-equiv="refresh" content="2;url=index.php">');
+        }
+        /** DELETE NEWS WHERE NEWS_ID KONIEC */
     } catch (PDOException $error) {
         $failure = "<br>" . $error->getMessage();
     }

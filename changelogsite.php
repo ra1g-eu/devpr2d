@@ -23,7 +23,7 @@
             $statement = $connection->prepare($sql);
             $statement->bindValue(':id', $id);
             $statement->execute();
-            $success = "Changelog deleted!";
+            $success = "Changelog removed!";
         }else {
 
         }

@@ -49,9 +49,9 @@
 
             Category: <a href="#" class="text-success"><?=stripslashes($article['news_category']); ?></a>
             <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
-            <a href="newseditor.php?newseditid=<?php echo $article['news_id']; ?>" type="submit" name="btnUpdatePR" class="btn btn-info btn-sm"
+            <a href="newseditor.php?newseditid=<?php echo $article['news_id']; ?>" type="submit"  class="btn btn-info btn-sm"
                style="float: right;">Edit <i class="fa fa-pencil"></i></a>
-            <a href="newseditor.php?iddelete=<?php echo $article['news_id']; ?>" type="submit" onClick='return confirmSubmit()' name="btnDeletePR"
+            <a href="newseditor.php?newsiddel=<?php echo $article['news_id']; ?>" type="submit" onClick='return confirmSubmit()'
                class="btn btn-danger btn-sm" style="float: right;">Delete <i class="fa fa-close"></i></a>
             <?php } ?>
         </div>
