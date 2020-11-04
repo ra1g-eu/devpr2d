@@ -11,9 +11,9 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
-                <a class="nav-link btn btn-outline-secondary" href="adminpanel.php"><i class="fa fa-userplus"></i>Admin Panel</a>
+                <a href="adminpanel.php" class="btn btn-outline-secondary"><i class="fa fa-key"></i>  Admin Panel</a>
                 <?php } else if(isset($_SESSION['id']) && ($user->role) == 'basic'){ ?>
-                <a class="nav-link btn btn-outline-secondary" href="#"><i class="fa fa-userplus"></i>In progress</a>
+                <a class="btn btn-outline-secondary" href="#"><i class="fa fa-lock"></i>In progress</a>
                 <?php } ?>
             </form>
             <form class="form-inline my-2 my-lg-0">
@@ -21,5 +21,4 @@
             </form>
         </div>
     </nav>
-
 </footer>

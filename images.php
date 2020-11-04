@@ -7,7 +7,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <?php include_once("menu.php");
-      $imageitems = $db->getImageItems();
+      $imageitems = $app->getImageItems();
       ?>
 </nav>
 <div class="container">

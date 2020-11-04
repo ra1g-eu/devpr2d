@@ -12,7 +12,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <?php include_once("menu.php");
-    $changelogitems = $db->getChangelogrlItems();
+    $changelogitems = $app->getChangelogrlItems();
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $success = "";
         $failure = "";

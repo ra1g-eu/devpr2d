@@ -47,7 +47,7 @@
                 <?= $article['news_full_content']; ?>
             </br>
 
-            Category: <a href="#" class="text-success"><?=stripslashes($article['news_category']); ?></a>
+            Category: <a href="newscat.php?nc=<?=stripslashes($article['news_category']); ?>" class="text-success"><?=stripslashes($article['news_category']); ?></a>
             <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
             <a href="newseditor.php?newseditid=<?php echo $article['news_id']; ?>" type="submit"  class="btn btn-info btn-sm"
                style="float: right;">Edit <i class="fa fa-pencil"></i></a>

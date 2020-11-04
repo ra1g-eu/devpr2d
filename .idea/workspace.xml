@@ -28,6 +28,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -59,7 +60,9 @@
       <workItem from="1603989044057" duration="5168000" />
       <workItem from="1604008380125" duration="7863000" />
       <workItem from="1604082527474" duration="6462000" />
-      <workItem from="1604163552635" duration="2904000" />
+      <workItem from="1604163552635" duration="3499000" />
+      <workItem from="1604246133888" duration="5576000" />
+      <workItem from="1604502813735" duration="6280000" />
     </task>
     <servers />
   </component>
@@ -67,23 +70,27 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="718" y="395" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604505368412">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="718" y="395" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@0.0.1920.1050" timestamp="1604505368412" />
     <state x="775" y="248" key="NewPhpClassDialog" timestamp="1603191474953">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="775" y="248" key="NewPhpClassDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1603191474953" />
-    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1604082729833">
+    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1604507581915">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="794" y="448" key="NewPhpFileDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1603195402335" />
     <state x="-1126" y="448" key="NewPhpFileDialog/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@-1920.0.1920.1050" timestamp="1603355060797" />
-    <state x="794" y="448" key="NewPhpFileDialog/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@0.0.1920.1050" timestamp="1604082729833" />
+    <state x="794" y="448" key="NewPhpFileDialog/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@0.0.1920.1050" timestamp="1604507581915" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/incl/newsconfig.php</url>
-          <line>23</line>
+          <line>25</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

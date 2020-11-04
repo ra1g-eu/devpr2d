@@ -1,7 +1,6 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-
     <?php
     include_once("header.php");
     require "incl/config.php";
@@ -19,7 +18,7 @@
 </nav>
 
 <div class="jumbotron">
-    <h1 class="display-5">News Editor <h4><a class="badge badge-warning" href="article.php?newsid=<?= stripslashes($newsedit['news_id']); ?>">Go back to article</a></h4></h1>
+    <h1 class="display-5">News Editor <?php if(!empty($newsedit['news_id'])) { ?><h4><a class="badge badge-warning" href="article.php?newsid=<?= stripslashes($newsedit['news_id']); ?>">Go back to article</a></h4><?php } ?></h1>
     <?php include_once("incl/modal.php"); ?>
     <?php
     $admin_error_message = "";

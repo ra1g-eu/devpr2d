@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 <head>
-
     <?php
     include_once("header.php");
     require "incl/config.php";
@@ -11,7 +10,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <?php include_once("menu.php");
-    $changelogitems = $db->getChangelogprItems();
+    $changelogitems = $app->getChangelogprItems();
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $success = "";
         $failure = "";

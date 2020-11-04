@@ -1,48 +1,38 @@
+<?php
+include_once ("session.php");
+$login_error_message = '';
+if (!empty($_POST['btnLogin'])) {
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+    if ($username == "") {
+        $login_error_message = 'Username field is required!';
+    } else if ($password == "") {
+        $login_error_message = 'Password field is required!';
+    } else {
+        $id = $app->Login($username, $password); // check user login
+        if($id > 0){
+            $_SESSION['id'] = $id; // Set Session
+            header("Location: myprofile.php");
+        }else
+        {
+            $login_error_message = 'Invalid login details!';
+        }
+    }
+}
+if(!empty($_SESSION["id"])){
+    header("Location: myprofile.php");
+}
+?>
 <!doctype html>
 <html>
 <head>
     <?php include_once("header.php"); ?>
-
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <?php include_once("menu.php"); ?>
-    <?php
-    //session_start();
-    include_once ("classes/DB.php");
-    use classes\DB;
-    $app = new DB("localhost","root","","devpeeporun", 3306);
-    $login_error_message = '';
-    if (!empty($_POST['btnLogin'])) {
-
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
-        $isloggedin = false;
-
-
-        if ($username == "") {
-            $login_error_message = 'Username field is required!';
-        } else if ($password == "") {
-            $login_error_message = 'Password field is required!';
-        } else {
-            $id = $app->Login($username, $password); // check user login
-            if($id > 0)
-            {
-                $_SESSION['id'] = $id; // Set Session
-                $_SESSION['logout'] = false;
-                header("Location: myprofile.php"); // Redirect user to the profile.php
-            }
-            else
-            {
-                $login_error_message = 'Invalid login details!';
-            }
-        }
-    }
-    if(!empty($_SESSION["id"])){
-        header("Location: myprofile.php");
-    }
-    ?>
+<?php include_once ("menu.php");
+?>
 </nav>
 <div class="container">
     <div class="jumbotron">

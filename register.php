@@ -1,3 +1,21 @@
+<?php include_once ("session.php");
+$register_error_message = '';
+if (!empty($_POST['btnRegister'])) {
+    if ($app->isEmail($_POST['email'])) {
+        $register_error_message = 'Email is already in use!';
+    } else if ($app->isUsername($_POST['username'])) {
+        $register_error_message = 'Username is already in use!';
+    } else {
+        $id = $app->Register($_POST['username'], $_POST['password'],$_POST['email']);
+        // set session and redirect user to the profile page
+        $_SESSION['id'] = $id;
+        header("Location: myprofile.php");
+    }
+}
+if(!empty($_SESSION["id"])){
+    header("Location: myprofile.php");
+}
+?>
 <!doctype html>
 <html>
 <head>
@@ -6,29 +24,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <?php include_once("menu.php"); ?>
-    <?php
-    //session_start();
-    include_once ("classes/DB.php");
-    use classes\DB;
-    $app = new DB("localhost","root","","devpeeporun", 3306);
-    $register_error_message = '';
-    if (!empty($_POST['btnRegister'])) {
-        if ($app->isEmail($_POST['email'])) {
-            $register_error_message = 'Email is already in use!';
-        } else if ($app->isUsername($_POST['username'])) {
-            $register_error_message = 'Username is already in use!';
-        } else {
-            $id = $app->Register($_POST['username'], $_POST['password'],$_POST['email']);
-            // set session and redirect user to the profile page
-            $_SESSION['id'] = $id;
-            header("Location: myprofile.php");
-        }
-    }
-    if(!empty($_SESSION["id"])){
-        header("Location: myprofile.php");
-    }
-    ?>
+    <?php include_once("menu.php");?>
 </nav>
 <div class="container">
 <div class="jumbotron">

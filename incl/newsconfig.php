@@ -1,6 +1,8 @@
 <?php
 require __DIR__ . '/../incl/config.php';
-
+$connection = new PDO($dsn, $username, $password, $options);
+$success = "";
+$failure = "";
 function fetchNews($conn)
 {
 
@@ -23,15 +25,27 @@ function getOtherArticles($differ_id, $conn)
     return $request->execute(array($differ_id)) ? $request->fetchAll(PDO::FETCH_ASSOC) : false;
 }
 
-function getArticleCategory($conn)
+function getNewsCategory($catname, $conn)
 {
-    $request = $conn->prepare(" SELECT news_id, news_category FROM news  WHERE news_id != ? ");
-    return $request->execute() ? $request->fetchAll(PDO::FETCH_ASSOC) : false;
+    $request = $conn->prepare(" SELECT news_id, news_title, news_short_description, news_author, news_published_on, news_category FROM news WHERE news_category = ? ");
+    return $request->execute(array($catname)) ? $request->fetchAll(PDO::FETCH_ASSOC) : false;
 }
-
-$connection = new PDO($dsn, $username, $password, $options);
-$success = "";
-$failure = "";
+function showNewsCategory(){
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        try {
+            if (isset($_POST['newscatidbutton'])) {
+                $catname = $_GET['newscatidbutton'];
+                return $catname;
+            } else {
+                echo('<meta http-equiv="refresh" content="0;url=index.php">');
+                return false;
+            }
+        } catch (PDOException $error) {
+            $failure = "<br>" . $error->getMessage();
+        }
+    }
+    return true;
+}
 $updating = false;
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     try {
