@@ -1,4 +1,4 @@
 # devpr2d
 Portálové Riešenia - Semestrálny projekt - stránka
 
-Stranka je funkcna na: prp.ra1g.eu
+Najnovsia verzia stranky je na: <a href="http://www.prp.ra1g.eu">prp.ra1g.eu</a>
