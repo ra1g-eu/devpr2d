@@ -41,8 +41,8 @@ if(isset($_GET['nc'])){
                             <br>
                             <p class="lead"><?= stripslashes($article['news_short_description']); ?></p>
                             <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
-                                <a href="newseditor.php?newseditid=<?php $article['news_id']; ?>" type="submit"  class="btn btn-info btn-sm" style="float: right;">EDIT <i class="fa fa-pencil"></i></a>
-                                <a href="newseditor.php?newsiddel=<?php $article['news_id']; ?>" type="submit" onClick='return confirmSubmit()' class="btn btn-danger btn-sm" style="float: right;">DELETE <i class="fa fa-close"></i></a>
+                                <a href="newseditor.php?newseditid=<?=$article['news_id']; ?>" type="submit"  class="btn btn-info btn-sm" style="float: right;">EDIT <i class="fa fa-pencil"></i></a>
+                                <a href="newseditor.php?newsiddel=<?=$article['news_id']; ?>" type="submit" onClick='return confirmSubmit()' class="btn btn-danger btn-sm" style="float: right;">DELETE <i class="fa fa-close"></i></a>
                             <?php } ?>
                         </div>
                         <hr class="my-lg-5">
