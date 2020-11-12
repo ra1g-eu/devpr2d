@@ -1,6 +1,6 @@
 <?php include_once ("session.php"); ?>
 <a class="navbar-brand" href="index.php">
-<?php if (empty($_SESSION["id"])) {
+<?php if (empty($_SESSION["userid"])) {
     echo "DEVPR2D";
     } else {
         echo 'Welcome <span class="badge badge-success">';
@@ -30,7 +30,7 @@
         </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-        <?php if (empty($_SESSION["id"])) { ?>
+        <?php if (empty($_SESSION["userid"])) { ?>
             <a class="nav-link btn btn-outline-success" href="register.php">Register</a>
             <a class="nav-link btn btn-outline-secondary" href="login.php">Login</a>
         <?php } else { ?>

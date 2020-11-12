@@ -11,7 +11,7 @@ if (!empty($_POST['btnLogin'])) {
     } else {
         $id = $app->Login($username, $password); // check user login
         if($id > 0){
-            $_SESSION['id'] = $id; // Set Session
+            $_SESSION['userid'] = $id; // Set Session
             header("Location: myprofile.php");
         }else
         {
@@ -19,15 +19,10 @@ if (!empty($_POST['btnLogin'])) {
         }
     }
 }
-if(!empty($_SESSION["id"])){
+if(!empty($_SESSION["userid"])){
     header("Location: myprofile.php");
 }
-?>
-<!doctype html>
-<html>
-<head>
-    <?php include_once("header.php"); ?>
-</head>
+include_once("header.php"); ?>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

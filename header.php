@@ -1,3 +1,6 @@
+<!doctype html>
+<html>
+<head>
 <meta charset="utf-8">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,11 +20,13 @@
 <title>PeepoRun2D - RA1G Launcher official developer website</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script src="js/modalshow.js"></script>
 <script src="js/adminpanel.js"></script>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/secondary.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 <script type="text/javascript" src="js/fancybox.js"></script>
 <link rel="stylesheet" type="text/css" href="css/fancybox.css" media="screen"/>
 <script src='js/tinymce/tinymce.min.js'></script>
@@ -40,3 +45,22 @@
         content_style: ".mce-content-body {font-size:14px}",
     });
 </script>
+    <script>
+        $(document).ready(function() {
+            $('#rolechangetable').DataTable({
+                paging: true,
+                "columnDefs": [
+                    { "orderable": false, "targets": [3] },
+                    { "orderable": true, "targets": [0, 1, 2] }
+                ]
+            });
+            $('#menuedittable').DataTable({
+                paging: true,
+                "columnDefs": [
+                    { "orderable": false, "targets": [5] },
+                    { "orderable": true, "targets": [0, 1, 2, 3, 4] }
+                ]
+            });
+        });
+    </script>
+</head>

@@ -15,12 +15,7 @@ if (!empty($_POST['btnRegister'])) {
 if(!empty($_SESSION["id"])){
     header("Location: myprofile.php");
 }
-?>
-<!doctype html>
-<html>
-<head>
-    <?php include_once("header.php"); ?>
-</head>
+include_once("header.php"); ?>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

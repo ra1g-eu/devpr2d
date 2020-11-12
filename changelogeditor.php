@@ -1,20 +1,16 @@
-<!doctype html>
-<html xmlns="http://www.w3.org/1999/html">
-<head>
-
     <?php
+    include_once("session.php");
     include_once("header.php");
     require "incl/config.php";
-    if(isset($_SESSION['id']) && ($user->role) == 'basic'){
+    if(isset($_SESSION['userid']) && ($user->role) == 'basic'){
         header("Location: index.php");
     }?>
-</head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <?php include_once("menu.php");
     require "incl/changelogconfig.php";
-    if(isset($_SESSION['id']) && ($user->role) == 'admin'){
+    if(isset($_SESSION['userid']) && ($user->role) == 'admin'){
     ?>
 </nav>
 

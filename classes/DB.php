@@ -82,19 +82,6 @@ class DB
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        /** test **/
-    public function getPRCHItems($id){
-        try{
-            $query = $this->connection->prepare("SELECT * FROM changelogpr WHERE id=:id");
-            $query->bindParam("id", $id, PDO::PARAM_STR);
-            $query->execute();
-                if ($query->rowCount() > 0) {
-                    return $query->fetch(PDO::FETCH_ASSOC);
-                }
-            } catch (PDOException $e) {
-        exit($e->getMessage());
-        }
-    }
     /**  load images to image gallery **/
     public function getImageItems(){
         $sql = "SELECT * FROM imagegallery ORDER BY idimage";
@@ -142,8 +129,8 @@ class DB
     public function UserDetails($id)
     {
         try {
-            $query = $this->connection->prepare("SELECT id, username, email, role FROM users WHERE id=:id");
-            $query->bindParam("id", $id, PDO::PARAM_STR);
+            $query = $this->connection->prepare("SELECT userid, username, email, role FROM users WHERE userid=:userid");
+            $query->bindParam("userid", $id, PDO::PARAM_STR);
             $query->execute();
             if ($query->rowCount() > 0) {
                 return $query->fetch(PDO::FETCH_OBJ);
@@ -156,14 +143,14 @@ class DB
     public function Login($username, $password)
     {
         try {
-            $query = $this->connection->prepare("SELECT id FROM users WHERE (username=:username OR email=:username) AND password=:password");
+            $query = $this->connection->prepare("SELECT userid FROM users WHERE (username=:username OR email=:username) AND password=:password");
             $query->bindParam("username", $username, PDO::PARAM_STR);
             $enc_password = hash('sha256', $password);
             $query->bindParam("password", $enc_password, PDO::PARAM_STR);
             $query->execute();
             if ($query->rowCount() > 0) {
                 $result = $query->fetch(PDO::FETCH_OBJ);
-                return $result->id;
+                return $result->userid;
             } else {
                 return false;
             }
@@ -175,7 +162,7 @@ class DB
     public function isEmail($email)
     {
         try {
-            $query = $this->connection->prepare("SELECT id FROM users WHERE email=:email");
+            $query = $this->connection->prepare("SELECT userid FROM users WHERE email=:email");
             $query->bindParam("email", $email, PDO::PARAM_STR);
             $query->execute();
             if ($query->rowCount() > 0) {
@@ -191,7 +178,7 @@ class DB
     public function isUsername($username)
     {
         try {
-            $query = $this->connection->prepare("SELECT id FROM users WHERE username=:username");
+            $query = $this->connection->prepare("SELECT userid FROM users WHERE username=:username");
             $query->bindParam("username", $username, PDO::PARAM_STR);
             $query->execute();
             if ($query->rowCount() > 0) {

@@ -10,9 +10,9 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
+                <?php if(isset($_SESSION['userid']) && ($user->role) == 'admin'){ ?>
                 <a href="adminpanel.php" class="btn btn-outline-secondary"><i class="fa fa-key"></i>  Admin Panel</a>
-                <?php } else if(isset($_SESSION['id']) && ($user->role) == 'basic'){ ?>
+                <?php } else if(isset($_SESSION['userid']) && ($user->role) == 'basic'){ ?>
                 <a class="btn btn-outline-secondary" href="#"><i class="fa fa-lock"></i>In progress</a>
                 <?php } ?>
             </form>

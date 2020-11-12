@@ -1,11 +1,8 @@
-<!doctype html>
-<html>
-<head>
     <?php
+    include_once("session.php");
     include_once("header.php");
     require "incl/config.php";
     ?>
-</head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -30,7 +27,7 @@
 <div class="jumbotron">
     <h1 class="display-5">Changelog PeepoRun2D</h1>
     <?php include_once("incl/modal.php"); ?>
-    <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
+    <?php if(isset($_SESSION['userid']) && ($user->role) == 'admin'){ ?>
         <a class="btn btn-primary btn-lg" style="float: right;" href="changelogeditor.php"><i class="fa fa-page"></i>Add new</a>
     <?php } ?>
     <div class="changelog">
@@ -39,7 +36,7 @@
                 ?>
                 <div class="changelog__item">
                     <div class="changelog__meta">
-                        <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
+                        <?php if(isset($_SESSION['userid']) && ($user->role) == 'admin'){ ?>
 
                             <a href="changelogeditor.php?peeporun=<?php echo $changelogitem['id']; ?>" type="submit" name="btnUpdatePR" class="btn btn-info btn-sm" style="float: right;"><i class="fa fa-pencil"></i></a>
                             <a href="changelogpr.php?peeporundelete=<?php echo $changelogitem['id']; ?>" type="submit" onClick='return confirmSubmit()' name="btnDeletePR" class="btn btn-danger btn-sm" style="float: right;"><i class="fa fa-close"></i></a>

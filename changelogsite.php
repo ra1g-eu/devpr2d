@@ -1,13 +1,8 @@
-<!doctype html>
-<html>
-<head>
-
     <?php
+    include_once("session.php");
     include_once("header.php");
     require "incl/config.php";
     ?>
-
-</head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

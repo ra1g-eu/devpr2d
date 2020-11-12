@@ -1,8 +1,6 @@
-<!doctype html>
-<html>
-  <head>
-<?php include_once("header.php"); ?>
-	    </head>
+<?php
+include_once("session.php");
+include_once("header.php"); ?>
   <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

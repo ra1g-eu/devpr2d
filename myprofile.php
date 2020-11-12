@@ -1,16 +1,11 @@
 <?php include_once ("session.php"); ?>
 <?php
-if(empty($_SESSION["id"])){
-header("Location: index.php");
+if(empty($_SESSION["userid"])) {
+    header("Location: index.php");
 }
-?>
-<!doctype html>
-<html>
-<head>
-    <?php
-    include_once("header.php");
+include_once("header.php");
     ?>
-</head>
+
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

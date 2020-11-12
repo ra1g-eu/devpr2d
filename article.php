@@ -1,11 +1,8 @@
-<!doctype html>
-<html>
-<head>
-
-    <?php include_once("header.php");
+    <?php
+    include_once("session.php");
+    include_once("header.php");
     require "incl/config.php";
     require "incl/newsconfig.php";?>
-</head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <?php include_once("menu.php");
