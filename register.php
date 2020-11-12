@@ -8,11 +8,11 @@ if (!empty($_POST['btnRegister'])) {
     } else {
         $id = $app->Register($_POST['username'], $_POST['password'],$_POST['email']);
         // set session and redirect user to the profile page
-        $_SESSION['id'] = $id;
+        $_SESSION['userid'] = $id;
         header("Location: myprofile.php");
     }
 }
-if(!empty($_SESSION["id"])){
+if(!empty($_SESSION["userid"])){
     header("Location: myprofile.php");
 }
 include_once("header.php"); ?>

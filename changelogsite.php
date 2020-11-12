@@ -29,7 +29,7 @@
 <div class="jumbotron">
     <h1 class="display-5">Changelog Website</h1>
     <?php include_once("incl/modal.php"); ?>
-    <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
+    <?php if(isset($_SESSION['userid']) && ($user->role) == 'admin'){ ?>
         <a class="btn btn-primary btn-lg" style="float: right;" href="changelogeditor.php"><i class="fa fa-page"></i>Add new</a>
     <?php } ?>
     <?php if(isset($_GET['notify']) && $_GET['notify']) {
@@ -42,7 +42,7 @@
                 ?>
                 <div class="changelog__item">
                     <div class="changelog__meta">
-                        <?php if(isset($_SESSION['id']) && ($user->role) == 'admin'){ ?>
+                        <?php if(isset($_SESSION['userid']) && ($user->role) == 'admin'){ ?>
                             <a href="changelogeditor.php?websitechangelog=<?php echo $changelogitem['id']; ?>" type="submit" name="btnUpdateWEB" class="btn btn-info btn-sm" style="float: right;"><i class="fa fa-pencil"></i></a>
                             <a href="changelogpr.php?websitechangelogdelete=<?php echo $changelogitem['id']; ?>" type="submit" onClick='return confirmSubmit()' name="btnDeleteWEB" class="btn btn-danger btn-sm" style="float: right;"><i class="fa fa-close"></i></a>
                         <?php }?>
