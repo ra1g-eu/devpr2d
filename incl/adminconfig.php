@@ -24,6 +24,15 @@ function getMenu($conn)
     return $request->execute() ? $request->fetchAll(PDO::FETCH_ASSOC) : false;
 }
 
+function getMenuById($id, $conn)
+{
+    $sql = "SELECT idmenu, meno, file_path, icon, menuorder FROM menu WHERE idmenu=:idmenu";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':idmenu', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 /*
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {

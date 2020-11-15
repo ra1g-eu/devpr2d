@@ -49,6 +49,6 @@ if(isset($_GET['nc'])){
         </div>
     </div>
 </div>
-<?php include("incl/edituser_modal.php"); include_once("footer.php"); ?>
+<?php include_once("footer.php"); ?>
 </body>
 </html>
