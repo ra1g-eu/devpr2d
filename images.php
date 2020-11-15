@@ -1,6 +1,8 @@
 <?php
 include_once("session.php");
-include_once("header.php"); ?>
+include_once("header.php");
+require "incl/config.php";
+?>
   <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

@@ -1,6 +1,14 @@
 <?php
-$conn = new PDO($dsn, $username, $password, $options);
-$ver = selectNewestVersion($conn); ?>
+$footerconnection = new PDO($dsn, $username, $password, $options);
+function selectNewestVersion($footerconnection){
+
+    $sql = "SELECT version FROM changelogsite ORDER BY version DESC";
+    $stmt = $footerconnection->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetch();
+
+}
+$sitever = selectNewestVersion($footerconnection); ?>
 <footer>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +17,7 @@ $ver = selectNewestVersion($conn); ?>
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" style="float: right;"><i class="fa fa-info-circle"></i><?php echo $ver['version']; ?></a>
+                    <a class="nav-link text-secondary" style="float: right;"><i class="fa fa-info-circle"></i><?php echo $sitever['version']; ?></a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
