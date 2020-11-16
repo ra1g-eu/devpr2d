@@ -1,5 +1,6 @@
 <?php
 include_once ("session.php");
+require "incl/config.php";
 $login_error_message = '';
 if (!empty($_POST['btnLogin'])) {
     $username = trim($_POST['username']);

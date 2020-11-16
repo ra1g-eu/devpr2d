@@ -1,11 +1,10 @@
-<?php include_once ("session.php"); ?>
-<?php
+<?php include_once ("session.php"); 
+require "incl/config.php";
 if(empty($_SESSION["userid"])) {
     header("Location: index.php");
 }
 include_once("header.php");
-    ?>
-
+?>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

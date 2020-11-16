@@ -1,4 +1,5 @@
 <?php include_once ("session.php");
+require "incl/config.php";
 $register_error_message = '';
 if (!empty($_POST['btnRegister'])) {
     if ($app->isEmail($_POST['email'])) {
