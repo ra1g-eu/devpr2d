@@ -1,14 +1,4 @@
-<?php
-$footerconnection = new PDO($dsn, $username, $password, $options);
-function selectNewestVersion($footerconnection){
-
-    $sql = "SELECT version FROM changelogsite ORDER BY version DESC";
-    $stmt = $footerconnection->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetch();
-
-}
-$sitever = selectNewestVersion($footerconnection); ?>
+<?php $sitever = $app->selectNewestVersion(); ?>
 <footer>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +12,7 @@ $sitever = selectNewestVersion($footerconnection); ?>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <?php if(isset($_SESSION['userid']) && ($user->role) == 'admin'){ ?>
-                <a href="adminpanel.php" class="btn btn-outline-secondary"><i class="fa fa-key"></i>  Admin Panel</a>
+                <a href="adminpanel/index.php" class="btn btn-outline-secondary"><i class="fa fa-key"></i>  Admin Panel</a>
                 <?php } else if(isset($_SESSION['userid']) && ($user->role) == 'basic'){ ?>
                 <a class="btn btn-outline-secondary" href="#"><i class="fa fa-lock"></i>In progress</a>
                 <?php } ?>

@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $peeporun = false;
             $ra1glauncher = false;
             //var_dump($statement->debugDumpParams());
-            echo('<meta http-equiv="refresh" content="2;url=index.php">');
+            echo('<meta http-equiv="refresh" content="2;url=../">');
         }
         /**   button btnDeleteCH   */
         if(isset($_POST['btnDeleteCH'])){
@@ -89,14 +89,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $statement->bindValue(':id', $id);
                 $statement->execute();
                 $success = "Game Changelog removed!";
-                echo('<meta http-equiv="refresh" content="2;url=changelogpr.php">');
+                echo('<meta http-equiv="refresh" content="2;url=../changelogpr.php">');
                 $peeporun = false;
             }if($ctgry === 'RL'){
                 $statement = $connection->prepare("DELETE FROM changelogrl WHERE id = :id");
                 $statement->bindValue(':id', $id);
                 $statement->execute();
                 $success = "Launcher Changelog removed!";
-                echo('<meta http-equiv="refresh" content="2;url=changelogrl.php">');
+                echo('<meta http-equiv="refresh" content="2;url=../changelogrl.php">');
                 $ra1glauncher = false;
             }if($ctgry === 'WEB'){
                 $statement = $connection->prepare("DELETE FROM changelogsite WHERE id = :id");
@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $statement->execute();
                 $success = "Website Changelog removed!";
                 $websitechangelog = false;
-                echo('<meta http-equiv="refresh" content="2;url=changelogsite.php">');
+                echo('<meta http-equiv="refresh" content="2;url=../changelogsite.php">');
             }
         }
     } catch (PDOException $error) {
@@ -136,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $statement = $connection->prepare($sql);
                 $statement->execute($new_changelog);
                 $success = "Changelog added!";
-                echo('<meta http-equiv="refresh" content="2;url=changelogpr.php">');
+                echo('<meta http-equiv="refresh" content="2;url=../changelogpr.php">');
             } else if ($ctgry === 'RL') {
                 $sql = sprintf(
                     "INSERT INTO %s (%s) values (%s)",
@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $statement = $connection->prepare($sql);
                 $statement->execute($new_changelog);
                 $success = "Changelog added!";
-                echo('<meta http-equiv="refresh" content="2;url=changelogrl.php">');
+                echo('<meta http-equiv="refresh" content="2;url=../changelogrl.php">');
             } else if ($ctgry === 'WEB') {
                 $sql = sprintf(
                     "INSERT INTO %s (%s) values (%s)",
@@ -158,11 +158,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $statement = $connection->prepare($sql);
                 $statement->execute($new_changelog);
                 $success = "Changelog added!";
-                echo('<meta http-equiv="refresh" content="2;url=changelogsite.php">');
+                echo('<meta http-equiv="refresh" content="2;url=../changelogsite.php">');
             }
         }
 
     } catch (PDOException $error) {
         echo "<br>" . $error->getMessage();
     }
+}
+function getPreviousVersionsPR($connection){
+    $sql = "SELECT version FROM changelogpr ORDER BY version DESC ";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+function getPreviousVersionsRL($connection){
+    $sql = "SELECT version FROM changelogrl ORDER BY version DESC ";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+function getPreviousVersionsWEB($connection){
+    $sql = "SELECT version FROM changelogsite ORDER BY version DESC ";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

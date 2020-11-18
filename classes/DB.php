@@ -110,6 +110,13 @@ class DB
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    function selectNewestVersion(){
+
+        $sql = "SELECT version FROM changelogsite ORDER BY version DESC LIMIT 1";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
 
     public function Register($username, $password, $email)
     {

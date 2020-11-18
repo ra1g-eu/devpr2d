@@ -45,22 +45,4 @@
         content_style: ".mce-content-body {font-size:14px}",
     });
 </script>
-    <script>
-        $(document).ready(function() {
-            $('#rolechangetable').DataTable({
-                paging: true,
-                "columnDefs": [
-                    { "orderable": false, "targets": [3] },
-                    { "orderable": true, "targets": [0, 1, 2] }
-                ]
-            });
-            $('#menuedittable').DataTable({
-                paging: true,
-                "columnDefs": [
-                    { "orderable": false, "targets": [5] },
-                    { "orderable": true, "targets": [0, 1, 2, 3, 4] }
-                ]
-            });
-        });
-    </script>
 </head>

@@ -8,6 +8,27 @@ function getUsers($conn)
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+function getUsersCount($conn)
+{
+    $sql = "SELECT COUNT(userid) as usrcount FROM users";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+function getArticleCount($conn)
+{
+    $sql = "SELECT COUNT(news_id) as newscount FROM news";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+function getImagesCount($conn)
+{
+    $sql = "SELECT COUNT(idimage) as imagescount FROM imagegallery";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 function getUsersById($id, $conn)
 {
