@@ -23,14 +23,13 @@ if (!empty($_SESSION["userid"])) {
     header("Location: myprofile.php");
 }
 include_once("header.php"); ?>
-<body>
 <?php include_once("menu.php");
 if (isset($_SESSION['userid']) && ($user->role) == 'banned'){
     header("Location: banned.php");
 }
 ?>
-<div class="container">
-    <div class="jumbotron">
+<div class="container py-2">
+    <div class="jumbotron elegant-color text-white">
         <h1 class="display-5">Login form</h1>
         <?php
         if ($login_error_message != "") {

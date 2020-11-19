@@ -5,10 +5,9 @@ if (!isset($_SESSION['userid']) || ($user->role) != 'banned'){
     header("Location: index.php");
 } else if (isset($_SESSION['userid']) || ($user->role) == 'banned') {
 ?>
-<body>
-<div class="container">
+<div class="container py-2">
 
-    <div class="jumbotron">
+    <div class="jumbotron elegant-color text-white"">
         <h1 class="display-5">You have been banned!</h1>
         <p class="lead">What does this mean for you?</p>
         <p>You won't be able to access the whole page while logged in.</p>

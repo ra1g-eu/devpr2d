@@ -3,14 +3,13 @@ include_once("session.php");
 include_once("header.php");
 require "incl/config.php";
 require "incl/newsconfig.php"; ?>
-<body>
 <?php include_once("menu.php");
 ?>
-<div class="container">
+<div class="container py-2">
     <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
         <a class="btn btn-primary btn-lg" style="float: right;" href="adminpanel/news-edit.php">Add new</a>
     <?php } ?>
-    <div class="jumbotron">
+    <div class="jumbotron elegant-color text-white"">
         <?php ?>
         <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
         <?php } ?>
@@ -34,7 +33,7 @@ require "incl/newsconfig.php"; ?>
         ?>
 
         <?php if ($article && !empty($article)) : ?>
-            <div class="jumbotron">
+            <div class="jumbotron elegant-color text-white"">
                 <h1 class="display-5" id="newstitle"><?= stripslashes($article['news_title']); ?></h1>
                 <h4 class="changelog__title" id="newsauthor"><span
                             class="badge badge-info">Author: <?= stripslashes($article['news_author']); ?></span></h4>
@@ -48,10 +47,10 @@ require "incl/newsconfig.php"; ?>
                 <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
                     <a href="adminpanel/news-edit.php?newseditid=<?php echo $article['news_id']; ?>" type="submit"
                        class="btn btn-info btn-sm"
-                       style="float: right;">Edit <i class="fa fa-pencil"></i></a>
+                       style="float: right;"><i class="fas fa-edit fa-2x"></i></a>
                     <a href="adminpanel/news-edit.php?newsiddel=<?php echo $article['news_id']; ?>" type="submit"
                        onClick='return confirmSubmit()'
-                       class="btn btn-danger btn-sm" style="float: right;">Delete <i class="fa fa-close"></i></a>
+                       class="btn btn-danger btn-sm" style="float: right;"><i class="fas fa-window-close fa-2x"></i></a>
                 <?php } ?>
             </div>
         <?php else: ?>
@@ -61,7 +60,7 @@ require "incl/newsconfig.php"; ?>
     </div>
 </div>
 <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron elegant-color text-white"">
         <h1 class="display-5">Comments</h1>
     </div>
 </div>

@@ -1,25 +1,16 @@
 <?php $sitever = $app->selectNewestVersion(); ?>
-<footer>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarColor02">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-secondary" style="float: right;"><i class="fa fa-info-circle"></i><?php echo $sitever['version']; ?></a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <?php if(isset($_SESSION['userid']) && ($user->role) == 'admin'){ ?>
-                <a href="adminpanel/index.php" class="btn btn-outline-secondary"><i class="fa fa-key"></i>  Admin Panel</a>
-                <?php } else if(isset($_SESSION['userid']) && ($user->role) == 'basic'){ ?>
-                <a class="btn btn-outline-secondary" href="#"><i class="fa fa-lock"></i>In progress</a>
-                <?php } ?>
-            </form>
-            <form class="form-inline my-2 my-lg-0">
-                <a class="nav-link text-secondary" href="http://ra1g.eu/" style="float: right;"><i class="fa fa-copyright"></i>2020 ra1g.eu</a>
-            </form>
+<footer class="page-footer elegant-color-dark">
+    <div class="container text-center text-md-center align-middle">
+        <div class="align-middle">
+            <div class="align-middle">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-2">Links</h5>
+                <a href="#!">Cookies policy</a> <i class="fas fa-minus "></i> <a href="#!">Other projects</a> <i
+                        class="fas fa-minus "></i> <a href="#!">About me</a>
+            </div>
         </div>
-    </nav>
+        <div class="footer-copyright text-center py-4">© 2020:
+            <a href="http://www.ra1g.eu"> RA1G</a>
+            <p><?php echo $sitever['version']; ?></p>
+        </div>
 </footer>
+<hr class="my-2">

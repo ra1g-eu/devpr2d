@@ -17,10 +17,9 @@ if (!empty($_SESSION["userid"])) {
     header("Location: myprofile.php");
 }
 include_once("header.php");?>
-<body>
 <?php include_once("menu.php"); ?>
 <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron elegant-color text-white">
         <h1 class="display-5">Registration form</h1>
         <?php
         if ($register_error_message != "") {

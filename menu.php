@@ -3,7 +3,7 @@ if (isset($_SESSION['userid']) && ($user->role) == 'banned'){
     header("Location: banned.php");
 }
 ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="nmb-1 navbar navbar-expand-lg navbar-dark unique-color lighten-5">
     <a class="navbar-brand" href="index.php">
         <?php if (empty($_SESSION["userid"])) {
             echo 'RA1GDev';
@@ -23,12 +23,12 @@ if (isset($_SESSION['userid']) && ($user->role) == 'banned'){
             <?php foreach ($menuItems as $key => $menuItem): ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= $menuItem['file_path']; ?>"><i
-                                class="<?= $menuItem['icon']; ?>"></i><?= $menuItem['meno']; ?></a>
+                                class="<?= $menuItem['icon']; ?>"></i>  <?= $menuItem['meno']; ?></a>
                 </li>
             <?php endforeach ?>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                   aria-expanded="false"><i class="fa fa-list-ul"></i>Changelogs</a>
+                   aria-expanded="false"><i class="fa fa-list-ul"></i>  Changelogs</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="changelogpr.php">PeepoRun2D</a>
                     <a class="dropdown-item" href="changelogrl.php">RA1G Launcher</a>
@@ -37,12 +37,14 @@ if (isset($_SESSION['userid']) && ($user->role) == 'banned'){
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <?php if (empty($_SESSION["userid"])) { ?>
-                <a class="nav-link btn btn-outline-success" href="register.php">Register</a>
-                <a class="nav-link btn btn-outline-secondary" href="login.php">Login</a>
+            <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
+                <a class="nav-link btn btn-light darken-3" href="adminpanel/">Admin Panel</a>
+            <?php } if (empty($_SESSION["userid"])) { ?>
+                <a class="nav-link btn btn-secondary" href="register.php">Register</a>
+                <a class="nav-link btn btn-pink" href="login.php">Login</a>
             <?php } else { ?>
-                <a class="nav-link btn btn-outline-success" href="myprofile.php">My profile </a>
-                <a class="nav-link btn btn-outline-danger" href="incl/logout.php">Logout</a>
+                <a class="nav-link btn btn-light darken-3" href="myprofile.php">My profile </a>
+                <a class="nav-link btn btn-pink" href="incl/logout.php">Logout</a>
             <?php } ?>
         </form>
     </div>

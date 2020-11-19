@@ -18,15 +18,27 @@
 <link rel="icon" type="image/png" sizes="96x96" href="ico/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
 <title>PeepoRun2D - RA1G Launcher official developer website</title>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script src="js/modalshow.js"></script>
 <script src="js/adminpanel.js"></script>
 <script src="js/checkusername.js"></script>
-<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/secondary.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 <script type="text/javascript" src="js/fancybox.js"></script>
 <link rel="stylesheet" type="text/css" href="css/fancybox.css" media="screen"/>
@@ -47,3 +59,4 @@
     });
 </script>
 </head>
+<body class="elegant-color-dark">

@@ -31,16 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
 }
 ?>
-<body>
 <?php include_once("menu.php");
 $imageitems = $app->getImageItems();
 ?>
-<div class="container">
+<div class="container py-2">
     <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
-        <a class="btn btn-primary btn-lg" style="float: right;" href="adminpanel/image-edit.php"><i
-                    class="fa fa-page"></i>Add new</a>
+        <a class="btn btn-primary btn-lg" style="float: right;" href="adminpanel/image-edit.php">Add new</a>
     <?php } ?>
-    <div class="jumbotron">
+    <div class="jumbotron elegant-color text-white">
         <h1 class="display-5">Image Gallery</h1>
         <!-- ALERTY PRE USPECH ALEBO FAIL START -->
         <?php if ($success != "") { ?>
@@ -68,13 +66,13 @@ $imageitems = $app->getImageItems();
                 ?>
                 <div class="col-lg-4">
                     <div class="bs-component">
-                        <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                        <div class="card border-secondary mb-3 elegant-color text-white" style="max-width: 20rem;">
                             <div class="card-header"><?php echo $imageitem['name']; ?><?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
                                     <a href="adminpanel/image-edit.php?imageupdate=<?php echo $imageitem['idimage']; ?>" type="submit" class="btn btn-info btn-sm" style="float: right;"><i
-                                                class="fa fa-pencil"></i></a>
+                                                class="fas fa-edit"></i></a>
                                     <a href="images.php?imagedelete=<?php echo $imageitem['idimage']; ?>"
                                        type="submit" onClick='return confirmSubmit()' class="btn btn-danger btn-sm"
-                                       style="float: right;"><i class="fa fa-close"></i></a>
+                                       style="float: right;"><i class="fas fa-window-close"></i></a>
                                 <?php } ?>
                             </div>
                             <a class="fancybox" href="imgs/<?php echo $imageitem['file_path']; ?>"

@@ -3,9 +3,6 @@ include_once("session.php");
 include_once("header.php");
 require "incl/config.php";
 ?>
-<body>
-
-
 <?php include_once("menu.php");
 $changelogitems = $app->getChangelogsiteItems();
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -26,12 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 ?>
 
 
-<div class="jumbotron">
+<div class="jumbotron elegant-color text-white">
     <h1 class="display-5">Changelog Website</h1>
     <?php include_once("incl/modal.php"); ?>
     <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
-        <a class="btn btn-primary btn-lg" style="float: right;" href="adminpanel/cl-edit.php"><i class="fa fa-page"></i>Add
-            new</a>
+        <a class="btn btn-primary btn-lg" style="float: right;" href="adminpanel/cl-edit.php">Add new</a>
     <?php } ?>
     <?php if (isset($_GET['notify']) && $_GET['notify']) {
         $message = "You've been logged out!";
@@ -46,10 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
                             <a href="adminpanel/cl-edit.php?websitechangelog=<?php echo $changelogitem['id']; ?>"
                                type="submit" name="btnUpdateWEB" class="btn btn-info btn-sm" style="float: right;"><i
-                                        class="fa fa-pencil"></i></a>
+                                        class="fas fa-edit fa-2x"></i></a>
                             <a href="changelogpr.php?websitechangelogdelete=<?php echo $changelogitem['id']; ?>"
                                type="submit" onClick='return confirmSubmit()' name="btnDeleteWEB"
-                               class="btn btn-danger btn-sm" style="float: right;"><i class="fa fa-close"></i></a>
+                               class="btn btn-danger btn-sm" style="float: right;"><i class="fas fa-window-close fa-2x"></i></a>
                         <?php } ?>
                         <h4 class="changelog__title" id="chversion"><span
                                     class="badge badge-info">v<?php echo $changelogitem['version']; ?></span></h4>
