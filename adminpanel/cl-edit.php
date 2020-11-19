@@ -21,6 +21,19 @@ if (isset($_SESSION['userid']) && ($user->role) == 'admin') {
                     } else {
                         echo 'Create New';
                     } ?></h1>
+                <!-- ALERTY PRE USPECH ALEBO FAIL START -->
+                <?php if($success != ""){ ?>
+                    <div class="alert alert-dismissible alert-success">
+                        <button type="button" class="btn-close" data-dismiss="alert"></button>
+                        <strong><?php echo $success; ?></strong>
+                    </div>
+                <?php } else if($failure !=""){?>
+                    <div class="alert alert-dismissible alert-danger">
+                        <button type="button" class="btn-close" data-dismiss="alert"></button>
+                        <strong><?php echo $failure; ?></strong>
+                    </div>
+                <?php } else {} ?>
+                <!-- ALERTY PRE USPECH ALEBO FAIL KONIEC -->
                 <hr class="mb-4">
                 <form action="cl-edit.php" method="post" name="addchangelog">
                     <!-- FORM CLASS START -->
@@ -184,6 +197,6 @@ if (isset($_SESSION['userid']) && ($user->role) == 'admin') {
     </div><!--//app-wrapper-->
     <?php include_once("adminfooter.php");
 } else {
-    echo('<meta http-equiv="refresh" content="2;url=../">');
+    echo('<meta http-equiv="refresh" content="0;url=../">');
 }
 ?>

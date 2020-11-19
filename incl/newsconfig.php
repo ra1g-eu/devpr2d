@@ -27,7 +27,7 @@ function getOtherArticles($differ_id, $conn)
 
 function getNewsCategory($catname, $conn)
 {
-    $request = $conn->prepare(" SELECT news_id, news_title, news_short_description, news_author, news_published_on, news_category FROM news WHERE news_category = ? ");
+    $request = $conn->prepare(" SELECT news_id, news_title, news_short_description, news_author, news_published_on, news_category FROM news WHERE news_category = ? ORDER BY news_id DESC");
     return $request->execute(array($catname)) ? $request->fetchAll(PDO::FETCH_ASSOC) : false;
 }
 function showNewsCategory(){
@@ -37,7 +37,7 @@ function showNewsCategory(){
                 $catname = $_GET['newscatidbutton'];
                 return $catname;
             } else {
-                echo('<meta http-equiv="refresh" content="0;url=index.php">');
+                echo('<meta http-equiv="refresh" content="0;url=../index.php">');
                 return false;
             }
         } catch (PDOException $error) {
@@ -67,8 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $statement = $connection->prepare($sql);
             $statement->bindValue(':news_id', $id);
             $statement->execute();
-            $success = "Article successfully removed!";
-            echo('<meta http-equiv="refresh" content="2;url=index.php">');
+            $success = "Article successfully removed! Refresh in 2 seconds.";
+            echo('<meta http-equiv="refresh" content="2;url=news-edit.php">');
         }
         /** NEWS DELETING KONIEC */
     } catch (PDOException $error) {
@@ -103,8 +103,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $statement->bindValue(':news_full_content', $fullcontent);
             $statement->bindValue(':news_category', $ctgry);
             $statement->execute();
-            $success = "Article successfully updated!";
-            echo('<meta http-equiv="refresh" content="2;url=index.php">');
+            $success = "Article successfully updated! Refresh in 2 seconds.";
+            echo('<meta http-equiv="refresh" content="2;url=news-edit.php">');
         }
         /** NEWS UPDATING KONIEC */
         /** ADD NEW ARTICLE */
@@ -125,8 +125,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             );
             $statement = $connection->prepare($sql);
             $statement->execute($new_article);
-            $success = "Article successfully added!";
-            echo('<meta http-equiv="refresh" content="2;url=index.php">');
+            $success = "Article successfully added! Refresh in 2 seconds.";
+            echo('<meta http-equiv="refresh" content="2;url=news-edit.php">');
         }
         /** ADD NEW ARTICLE KONIEC */
         /** DELETE NEWS WHERE NEWS_ID */
@@ -136,8 +136,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $statement = $connection->prepare($sql);
             $statement->bindValue(':news_id', $id);
             $statement->execute();
-            $success = "Article successfully removed!";
-            echo('<meta http-equiv="refresh" content="2;url=index.php">');
+            $success = "Article successfully removed! Refresh in 2 seconds.";
+            echo('<meta http-equiv="refresh" content="2;url=news-edit.php">');
         }
         /** DELETE NEWS WHERE NEWS_ID KONIEC */
     } catch (PDOException $error) {

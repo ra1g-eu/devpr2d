@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $statement->bindValue(':menuorder', $menuorder);
             $statement->execute();
             //var_dump($statement->debugDumpParams());
-            $success = "Menu successfully updated!";
+            $success = "Menu successfully updated! Refresh in 2 seconds.";
             echo('<meta http-equiv="refresh" content="2;url=menupage.php">');
         }
         if (isset($_POST['addnewmenu'])) {
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             );
             $statement = $conn->prepare($sql);
             $statement->execute($new_menu);
-            $success = "Menu successfully created!";
+            $success = "Menu successfully created! Refresh in 2 seconds.";
             echo('<meta http-equiv="refresh" content="2;url=menupage.php">');
         }
         if (isset($_POST['deletemenub'])) {
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $statement = $conn->prepare("DELETE FROM menu WHERE idmenu=:idmenu");
             $statement->bindParam(':idmenu', $idmenu, PDO::PARAM_INT);
             $statement->execute();
-            $success = "Menu successfully deleted!";
+            $success = "Menu successfully deleted! Refresh in 2 seconds.";
             echo('<meta http-equiv="refresh" content="2;url=menupage.php">');
         }
     } catch (PDOException $error) {
@@ -62,6 +62,19 @@ include_once("modal.php");
         <div class="container-xl">
             <div class="row g-3 mb-4 align-items-center justify-content-between">
                 <div class="col-auto">
+                    <!-- ALERTY PRE USPECH ALEBO FAIL START -->
+                    <?php if($success != ""){ ?>
+                        <div class="alert alert-dismissible alert-success">
+                            <button type="button" class="btn-close" data-dismiss="alert"></button>
+                            <strong><?php echo $success; ?></strong>
+                        </div>
+                    <?php } else if($failure !=""){?>
+                        <div class="alert alert-dismissible alert-danger">
+                            <button type="button" class="btn-close" data-dismiss="alert"></button>
+                            <strong><?php echo $failure; ?></strong>
+                        </div>
+                    <?php } else {} ?>
+                    <!-- ALERTY PRE USPECH ALEBO FAIL KONIEC -->
                     <h1 class="app-page-title mb-0">Active menus</h1>
                 </div>
             </div><!--//row-->

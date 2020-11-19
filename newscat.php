@@ -20,7 +20,7 @@ if (isset($_GET['nc'])) {
 ?>
 <div class="container">
     <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
-        <a class="btn btn-primary btn-lg" style="float: right;" href="newseditor.php"><i class="fa fa-page"></i>Add new</a>
+        <a class="btn btn-primary btn-lg" style="float: right;" href="adminpanel/news-edit.php"><i class="fa fa-page"></i>Add new</a>
     <?php } ?>
     <div class="jumbotron">
         <h1 class="display-5">News <?php if ($ncisset) { ?>category: <span
@@ -43,10 +43,10 @@ if (isset($_GET['nc'])) {
                             <br>
                             <p class="lead"><?= stripslashes($article['news_short_description']); ?></p>
                             <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
-                                <a href="newseditor.php?newseditid=<?= $article['news_id']; ?>" type="submit"
+                                <a href="adminpanel/news-edit.php?newseditid=<?= $article['news_id']; ?>" type="submit"
                                    class="btn btn-info btn-sm" style="float: right;">EDIT <i
                                             class="fa fa-pencil"></i></a>
-                                <a href="newseditor.php?newsiddel=<?= $article['news_id']; ?>" type="submit"
+                                <a href="adminpanel/news-edit.php?newsiddel=<?= $article['news_id']; ?>" type="submit"
                                    onClick='return confirmSubmit()' class="btn btn-danger btn-sm" style="float: right;">DELETE
                                     <i class="fa fa-close"></i></a>
                             <?php } ?>

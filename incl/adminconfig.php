@@ -53,32 +53,3 @@ function getMenuById($id, $conn)
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-
-/*
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    try {
-        if (isset($_POST['updaterole'])) {
-            $id = $_POST['updaterolehid'];
-            $ctgry = $_POST['userrole'];
-            if ($ctgry === 'basic') {
-                $statement = $connection->prepare("UPDATE users SET role=:role WHERE id=:id");
-                $success = "Website Changelog updated!";
-            }
-            if ($ctgry === 'admin') {
-                $statement = $connection->prepare("UPDATE users SET role=:role WHERE id=:id");
-                $success = "Launcher Changelog updated!";
-            }
-            if ($ctgry === 'banned') {
-                $statement = $connection->prepare("UPDATE users SET role=:role WHERE id=:id");
-                $success = "Launcher Changelog updated!";
-            }
-            $statement->bindParam(':id', $id, PDO::PARAM_INT);
-            $statement->bindValue(':role', $ctgry, PDO::PARAM_STR);
-            $statement->execute();
-            var_dump($statement->debugDumpParams());
-        }
-        } catch (PDOException $error) {
-            $failure = "<br>" . $error->getMessage();
-        }
-}
-*/

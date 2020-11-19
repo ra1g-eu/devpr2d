@@ -34,6 +34,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\devpr2d\adminpanel" />
       <recent name="C:\xampp\htdocs\devpr2d" />
       <recent name="C:\xampp\htdocs\devpr2d\incl" />
       <recent name="C:\xampp\htdocs\devpr2d\css" />
@@ -72,7 +73,9 @@
       <workItem from="1605461604966" duration="322000" />
       <workItem from="1605536510822" duration="29000" />
       <workItem from="1605706671477" duration="114000" />
-      <workItem from="1605723401323" duration="2501000" />
+      <workItem from="1605723401323" duration="3803000" />
+      <workItem from="1605735609993" duration="7901000" />
+      <workItem from="1605774810508" duration="14022000" />
     </task>
     <servers />
   </component>
@@ -80,6 +83,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605737210620">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1920.1050/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1605737210620" />
     <state x="718" y="395" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604505368412">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -93,27 +100,16 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="775" y="248" key="NewPhpClassDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1603191474953" />
-    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1605724164531">
+    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1605794266233">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="794" y="448" key="NewPhpFileDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1603195402335" />
     <state x="-1126" y="448" key="NewPhpFileDialog/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@-1920.0.1920.1050" timestamp="1603355060797" />
     <state x="794" y="448" key="NewPhpFileDialog/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@0.0.1920.1050" timestamp="1605456864577" />
-    <state x="794" y="448" key="NewPhpFileDialog/1920.0.1920.1050/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1605724164531" />
+    <state x="794" y="448" key="NewPhpFileDialog/1920.0.1920.1050/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1605794266233" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1605111360149">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@0.0.1920.1050" timestamp="1605111360149" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/incl/newsconfig.php</url>
-          <line>25</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

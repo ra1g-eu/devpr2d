@@ -51,9 +51,6 @@ if (empty($_SESSION['userid']) || ($user->role) == 'basic' || ($user->role == 'b
                         <div class="app-utility-item align-right">
                             <a href="../myprofile.php" class="btn btn-success text-center text-white">Profile <i class="fa fa-id-card"></i></a>
                         </div>
-                        <div class="app-utility-item align-right">
-                            <a href="../incl/logout.php" class="btn btn-danger text-center text-white">Sign Out <i class="fa fa-sign-out"></i></a>
-                        </div>
                     </div><!--//col-->
 
                 </div><!--//row-->
@@ -109,6 +106,22 @@ if (empty($_SESSION['userid']) || ($user->role) == 'basic' || ($user->role == 'b
                         </a><!--//nav-link-->
                     </li><!--//nav-item-->
                     <!-- MENU ITEM END-->
+                    <!-- MENU ITEM -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="image-edit.php">
+                            <span class="nav-icon"><i class="fa fa-edit"></i></span>
+                            <span class="nav-link-text">Image Editor</span>
+                        </a><!--//nav-link-->
+                    </li><!--//nav-item-->
+                    <!-- MENU ITEM END-->
+                    <!-- MENU ITEM -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="news-edit.php">
+                            <span class="nav-icon"><i class="fa fa-edit"></i></span>
+                            <span class="nav-link-text">Article Editor</span>
+                        </a><!--//nav-link-->
+                    </li><!--//nav-item-->
+                    <!-- MENU ITEM END-->
                     <li class="nav-item">
                         <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                         <a class="nav-link" href="information.php">
@@ -144,6 +157,13 @@ if (empty($_SESSION['userid']) || ($user->role) == 'basic' || ($user->role == 'b
 	</svg>
 							        </span>
                                 <span class="nav-link-text">External link - License</span>
+                            </a><!--//nav-link-->
+                        </li><!--//nav-item-->
+                        <li class="nav-item">
+                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                            <a class="nav-link" href="../incl/logout.php">
+							        <span class="nav-icon"></span>
+                                <span class="nav-link-text btn bg-danger">Sign Out <i class="fa fa-sign-out"></i></span>
                             </a><!--//nav-link-->
                         </li><!--//nav-item-->
                     </ul><!--//footer-menu-->

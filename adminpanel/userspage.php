@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $statement->bindValue(':userid', $id);
             $statement->execute();
             //var_dump($statement->debugDumpParams());
-            $success = "User successfully banned!";
+            $success = "User successfully banned! Refresh in 2 seconds.";
             echo('<meta http-equiv="refresh" content="2;url=userspage.php">');
         }
         if (isset($_GET['makeadmin'])) {
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $statement = $conn->prepare("UPDATE users SET role='admin' WHERE userid=:userid");
             $statement->bindValue(':userid', $id);
             $statement->execute();
-            $success = "User successfully made admin!";
+            $success = "User successfully made admin! Refresh in 2 seconds.";
             echo('<meta http-equiv="refresh" content="2;url=userspage.php">');
         }
         if (isset($_GET['makebasic'])) {
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $statement = $conn->prepare("UPDATE users SET role='basic' WHERE userid=:userid");
             $statement->bindValue(':userid', $id);
             $statement->execute();
-            $success = "User successfully normalized!";
+            $success = "User successfully normalized! Refresh in 2 seconds.";
             echo('<meta http-equiv="refresh" content="2;url=userspage.php">');
         }
     } catch (PDOException $error) {
@@ -41,9 +41,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 <div class="app-wrapper">
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
-            <?php include_once("modal.php"); ?>
             <div class="row g-3 mb-4 align-items-center justify-content-between">
                 <div class="col-auto">
+                    <!-- ALERTY PRE USPECH ALEBO FAIL START -->
+                    <?php if($success != ""){ ?>
+                        <div class="alert alert-dismissible alert-success">
+                            <button type="button" class="btn-close" data-dismiss="alert"></button>
+                            <strong><?php echo $success; ?></strong>
+                        </div>
+                    <?php } else if($failure !=""){?>
+                        <div class="alert alert-dismissible alert-danger">
+                            <button type="button" class="btn-close" data-dismiss="alert"></button>
+                            <strong><?php echo $failure; ?></strong>
+                        </div>
+                    <?php } else {} ?>
+                    <!-- ALERTY PRE USPECH ALEBO FAIL KONIEC -->
                     <h1 class="app-page-title mb-0">Registered users</h1>
                 </div>
             </div><!--//row-->

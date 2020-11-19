@@ -16,7 +16,7 @@ if (!empty($_POST['btnRegister'])) {
 if (!empty($_SESSION["userid"])) {
     header("Location: myprofile.php");
 }
-include_once("header.php"); ?>
+include_once("header.php");?>
 <body>
 <?php include_once("menu.php"); ?>
 <div class="container">
@@ -34,6 +34,7 @@ include_once("header.php"); ?>
                 <input type="text" class="form-control" name="username" id="username"
                        placeholder="Enter username (0-20)" required="required" pattern="[\s\S]*\S[\s\S]*" minlength="3"
                        maxlength="20"/>
+                <p class="lead"><span id="status" class="badge bg-info text-white text-center text-capitalize"></span></p>
             </div>
             <div class="form-group">
                 <label>Email</label>

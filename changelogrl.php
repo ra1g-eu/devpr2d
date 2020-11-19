@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                                type="submit" name="btnUpdateRL" class="btn btn-info btn-sm" style="float: right;"><i
                                         class="fa fa-pencil"></i></a>
                             <a href="changelogrl.php?ra1glauncherdelete=<?php echo $changelogitem['id']; ?>"
-                               type="submit" name="btnDeleteRL" class="btn btn-danger btn-sm" style="float: right;"><i
+                               type="submit" onClick='return confirmSubmit()' class="btn btn-danger btn-sm" style="float: right;"><i
                                         class="fa fa-close"></i></a>
                         <?php } ?>
                         <h4 class="changelog__title" id="chversion"><span
