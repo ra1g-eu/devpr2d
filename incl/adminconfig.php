@@ -53,3 +53,26 @@ function getMenuById($id, $conn)
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getOldReleases($conn)
+{
+    $sql = "SELECT * FROM releases WHERE islatest='no'";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+function getLatestReleases($conn)
+{
+    $sql = "SELECT * FROM releases WHERE islatest='yes'";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+function getOldGameReleases($conn)
+{
+    $sql = "SELECT * FROM releases WHERE islatest='no' AND name like '%peepo%'";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+

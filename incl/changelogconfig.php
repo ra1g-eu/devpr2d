@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $peeporun = false;
             $ra1glauncher = false;
             //var_dump($statement->debugDumpParams());
-            echo('<meta http-equiv="refresh" content="2;url=../">');
+            echo('<meta http-equiv="refresh" content="2;url=../changelogs.php">');
         }
         /**   button btnDeleteCH   */
         if(isset($_POST['btnDeleteCH'])){
@@ -89,14 +89,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $statement->bindValue(':id', $id);
                 $statement->execute();
                 $success = "Game Changelog removed!";
-                echo('<meta http-equiv="refresh" content="2;url=../changelogpr.php">');
+                echo('<meta http-equiv="refresh" content="2;url=../changelogs.php">');
                 $peeporun = false;
             }if($ctgry === 'RL'){
                 $statement = $connection->prepare("DELETE FROM changelogrl WHERE id = :id");
                 $statement->bindValue(':id', $id);
                 $statement->execute();
                 $success = "Launcher Changelog removed!";
-                echo('<meta http-equiv="refresh" content="2;url=../changelogrl.php">');
+                echo('<meta http-equiv="refresh" content="2;url=../changelogs.php">');
                 $ra1glauncher = false;
             }if($ctgry === 'WEB'){
                 $statement = $connection->prepare("DELETE FROM changelogsite WHERE id = :id");
@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $statement->execute();
                 $success = "Website Changelog removed!";
                 $websitechangelog = false;
-                echo('<meta http-equiv="refresh" content="2;url=../changelogsite.php">');
+                echo('<meta http-equiv="refresh" content="2;url=../changelogs.php">');
             }
         }
     } catch (PDOException $error) {
@@ -135,8 +135,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 );
                 $statement = $connection->prepare($sql);
                 $statement->execute($new_changelog);
-                $success = "Changelog added!";
-                echo('<meta http-equiv="refresh" content="2;url=../changelogpr.php">');
+                $success = "PeepoRun2D changelog added!";
+                echo('<meta http-equiv="refresh" content="2;url=../changelogs.php#peeporun2d">');
             } else if ($ctgry === 'RL') {
                 $sql = sprintf(
                     "INSERT INTO %s (%s) values (%s)",
@@ -146,8 +146,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 );
                 $statement = $connection->prepare($sql);
                 $statement->execute($new_changelog);
-                $success = "Changelog added!";
-                echo('<meta http-equiv="refresh" content="2;url=../changelogrl.php">');
+                $success = "Launcher changelog added!";
+                echo('<meta http-equiv="refresh" content="2;url=../changelogs.php#ra1glauncher">');
             } else if ($ctgry === 'WEB') {
                 $sql = sprintf(
                     "INSERT INTO %s (%s) values (%s)",
@@ -157,8 +157,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 );
                 $statement = $connection->prepare($sql);
                 $statement->execute($new_changelog);
-                $success = "Changelog added!";
-                echo('<meta http-equiv="refresh" content="2;url=../changelogsite.php">');
+                $success = "Website changelog added!";
+                echo('<meta http-equiv="refresh" content="2;url=../changelogs.php#website">');
             }
         }
 

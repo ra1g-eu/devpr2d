@@ -189,7 +189,7 @@ if (isset($_SESSION['userid']) && ($user->role) == 'admin') {
                     <?php } else {?>
                         <button type="submit" class="btn-lg btn-success btn-block" name="btnAddNew">Create new changelog <i class="fa fa-check-square-o"></i></button>
                     <?php } ?>
-                    <a href="../" class="btn-lg btn-secondary btn-block text-center">Go back <i class="fa fa-sign-out"></i></a>
+                    <a href="../changelogs.php" class="btn-lg btn-secondary btn-block text-center">Go back <i class="fa fa-sign-out"></i></a>
                 </form>
                 <hr class="my-4">
             </div><!--//container-fluid-->

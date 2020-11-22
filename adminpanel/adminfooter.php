@@ -32,6 +32,20 @@
                 { "orderable": true, "targets": [0, 1, 2, 3, 4] }
             ]
         });
+        $('#allreleases').DataTable({
+            paging: true,
+            "columnDefs": [
+                { "orderable": false, "targets": [6] },
+                { "orderable": true, "targets": [0, 1, 2, 3, 4, 5] }
+            ]
+        });
+        $('#latestreleases').DataTable({
+            paging: true,
+            "columnDefs": [
+                { "orderable": false, "targets": [6] },
+                { "orderable": true, "targets": [0, 1, 2, 3, 4, 5] }
+            ]
+        });
     });
 </script>
 <script>

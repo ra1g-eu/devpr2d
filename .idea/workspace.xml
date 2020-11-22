@@ -34,9 +34,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\devpr2d\adminpanel" />
       <recent name="C:\xampp\htdocs\devpr2d" />
       <recent name="C:\xampp\htdocs\devpr2d\incl" />
+      <recent name="C:\xampp\htdocs\devpr2d\adminpanel" />
       <recent name="C:\xampp\htdocs\devpr2d\css" />
     </key>
   </component>
@@ -76,7 +76,9 @@
       <workItem from="1605723401323" duration="3803000" />
       <workItem from="1605735609993" duration="7901000" />
       <workItem from="1605774810508" duration="14626000" />
-      <workItem from="1605811525631" duration="925000" />
+      <workItem from="1605811525631" duration="5740000" />
+      <workItem from="1605872174011" duration="856000" />
+      <workItem from="1606071052770" duration="1079000" />
     </task>
     <servers />
   </component>

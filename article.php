@@ -29,7 +29,6 @@ require "incl/newsconfig.php"; ?>
             $success = "";
             header("refresh:2;url=index.php");
         }
-        include_once("incl/modal.php");
         ?>
 
         <?php if ($article && !empty($article)) : ?>

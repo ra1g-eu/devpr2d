@@ -25,7 +25,6 @@ if (isset($_GET['nc'])) {
         <h1 class="display-5">News <?php if ($ncisset) { ?>category: <span
                     class="badge-success"><?= $catname ?></span> <?php } ?></h1>
         <hr class="my-4">
-        <?php //include_once("incl/modal.php"); ?>
         <div class="changelog">
             <div class="wrapper">
                 <?php if ($news && !empty($news)) : ?>

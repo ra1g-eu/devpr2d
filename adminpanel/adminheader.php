@@ -122,6 +122,14 @@ if (empty($_SESSION['userid']) || ($user->role) == 'basic' || ($user->role == 'b
                         </a><!--//nav-link-->
                     </li><!--//nav-item-->
                     <!-- MENU ITEM END-->
+                    <!-- MENU ITEM -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="download-edit.php">
+                            <span class="nav-icon"><i class="fa fa-download"></i></span>
+                            <span class="nav-link-text">Download Editor</span>
+                        </a><!--//nav-link-->
+                    </li><!--//nav-item-->
+                    <!-- MENU ITEM END-->
                     <li class="nav-item">
                         <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                         <a class="nav-link" href="information.php">
