@@ -1,5 +1,5 @@
 <?php
-
+$title = "banned";
     include_once("header.php");
     ?>
     <div class="container py-2">

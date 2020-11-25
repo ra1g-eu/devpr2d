@@ -28,7 +28,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../devpeeporunfun" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -78,7 +78,11 @@
       <workItem from="1605774810508" duration="14626000" />
       <workItem from="1605811525631" duration="5740000" />
       <workItem from="1605872174011" duration="856000" />
-      <workItem from="1606071052770" duration="1079000" />
+      <workItem from="1606071052770" duration="1675000" />
+      <workItem from="1606140073013" duration="56000" />
+      <workItem from="1606164489657" duration="5441000" />
+      <workItem from="1606214197361" duration="2634000" />
+      <workItem from="1606309673443" duration="4670000" />
     </task>
     <servers />
   </component>
@@ -94,11 +98,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="718" y="395" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@0.0.1920.1050" timestamp="1604505368412" />
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1605800722832">
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1606310839656">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@0.0.1920.1050" timestamp="1605536530571" />
-    <state x="740" y="280" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1605800722832" />
+    <state x="740" y="280" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1606310839656" />
     <state x="775" y="248" key="NewPhpClassDialog" timestamp="1603191474953">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -110,6 +114,10 @@
     <state x="-1126" y="448" key="NewPhpFileDialog/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@-1920.0.1920.1050" timestamp="1603355060797" />
     <state x="794" y="448" key="NewPhpFileDialog/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@0.0.1920.1050" timestamp="1605456864577" />
     <state x="794" y="448" key="NewPhpFileDialog/1920.0.1920.1050/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1605794266233" />
+    <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606168212538">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1050/-1920.0.1536.834/0.0.1920.1050@0.0.1920.1050" timestamp="1606168212538" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1605111360149">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

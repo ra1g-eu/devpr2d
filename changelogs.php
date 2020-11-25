@@ -1,5 +1,6 @@
 <?php
 include_once("session.php");
+$title = "changelogs";
 include_once("header.php");
 require "incl/config.php";
 ?>
@@ -42,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
 }
 ?>
+<div class="container py-2">
 <div class="jumbotron elegant-color text-white"">
     <h1 class="display-5">All available changelogs</h1>
 <div class="my-5"></div>
@@ -56,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         <button type="button" class="btn-close" data-dismiss="alert">X</button>
         <strong><?php echo $failure; ?></strong>
     </div>
-<?php }?>
+<?php } else {} ?>
 <!-- ALERTY PRE USPECH ALEBO FAIL KONIEC -->
 <ul class="nav nav-tabs nav-fill md-tabs stylish-color-dark" id="changelogs" role="tablist">
     <li class="nav-item elegant-color-dark">
@@ -74,108 +76,133 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 </ul>
 <div class="tab-content pt-5" id="changelogstab">
     <div class="tab-pane fade active show" id="peeporun2d" role="tabpanel" aria-labelledby="peeporun2d">
-        <h3 class="display-5">PeepoRun2D</h3>
-        <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
-            <a class="btn btn-primary btn-lg" style="float: right;" href="adminpanel/cl-edit.php">Add new</a>
-        <?php } ?>
-        <div class="changelog">
-            <div class="wrapper">
-                <?php foreach ($changelogitems as $key => $changelogitem) {
-                    ?>
-                    <div class="changelog__item">
-                        <div class="changelog__meta">
-                            <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
-
-                                <a href="adminpanel/cl-edit.php?peeporun=<?php echo $changelogitem['id']; ?>" type="submit"
-                                   name="btnUpdatePR" class="btn btn-info btn-sm" style="float: right;"><i
-                                            class="fas fa-edit fa-2x"></i></a>
-                                <a href="changelogs.php?peeporundelete=<?php echo $changelogitem['id']; ?>" type="submit"
-                                   onClick='return confirmSubmit()' name="btnDeletePR" class="btn btn-danger btn-sm"
-                                   style="float: right;"><i class="fas fa-window-close fa-2x"></i></a>
-
-                            <?php } ?>
-                            <h4 class="changelog__title" id="chversion"><span
-                                        class="badge badge-info">v<?php echo $changelogitem['version']; ?></span></h4>
-                            <h5 class="changelog__date" id="chdate"><span
-                                        class="badge badge-dark"><?php echo $changelogitem['date']; ?></span></h5>
-                        </div>
-                        <div class="changelog__detail" id="chtext">
-                            <?php echo $changelogitem['text']; ?>
-                        </div>
-                    </div>
-                    <hr class="my-4">
-                <?php } ?>
+        <h3 class="display-5">PeepoRun2D
+            <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
+                <a class="btn btn-primary btn" href="adminpanel/cl-edit.php">Add new</a>
+            <?php } ?>
+        </h3>
+        <hr class="my-4 invisible">
+        <div class="accordion module-accordion" id="module-accordion">
+            <?php foreach ($changelogitems as $key => $changelogitem) {
+            ?>
+            <div class="module-item card elegant-color-dark text-white">
+                <div class="module-header card-header" id="module-heading-1">
+                    <h4 class="module-title mb-0">
+                        <a class="card-toggle module-toggle" style="letter-spacing: 3px;" href="#pr<?php echo $link = preg_replace('/\D/', '', $changelogitem['version']); ?>" data-toggle="collapse" data-target="#pr<?php echo $link = preg_replace('/\D/', '', $changelogitem['version']); ?>" aria-expanded="true" aria-controls="pr<?php echo $link = preg_replace('/\D/', '', $changelogitem['version']); ?>">
+                            <i class="module-toggle-icon fas fa-plus mr-2"></i>
+                            v<?php echo  $changelogitem['version']; ?> <span class="badge font-small align-middle mx-2 bg-primary"><?php echo $changelogitem['date']; ?></span>
+                        </a>
+                        <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
+                            <a href="adminpanel/cl-edit.php?peeporun=<?php echo $changelogitem['id']; ?>"
+                               class="btn btn-info btn-sm" style="float: right;"><i
+                                        class="fas fa-edit"></i></a>
+                            <a href="changelogs.php?peeporundelete=<?php echo $changelogitem['id']; ?>"
+                               onClick='return confirmSubmit()' class="btn btn-danger btn-sm"
+                               style="float: right;"><i class="fas fa-window-close"></i></a>
+                        <?php } ?>
+                    </h4>
+                </div><!--//card-header-->
+                <div id="pr<?php echo $link = preg_replace('/\D/', '', $changelogitem['version']); ?>" class="module-content collapse" aria-labelledby="module-heading-1" >
+                    <div class="card-body p-0">
+                        <div class="module-sub-item p-3">
+                            <div class="row justify-content-between">
+                                <ul>
+                                    <?php echo $changelogitem['text']; ?>
+                                </ul>
+                            </div>
+                        </div><!--//card-body-->
+                    </div><!--//module-content-->
+                </div><!--//module-accordion-->
             </div>
+            <?php } ?>
         </div>
     </div>
     <div class="tab-pane fade" id="ra1glauncher" role="tabpanel" aria-labelledby="ra1glauncher">
-        <h3 class="display-5">RA1G Launcher</h3>
-        <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
-            <a class="btn btn-primary btn-lg" style="float: right;" href="adminpanel/cl-edit.php">Add new</a>
-        <?php } ?>
-        <div class="changelog">
-            <div class="wrapper">
-                <?php foreach ($changelogRLitems as $key => $changelogRLitem) {
-                    ?>
-                    <div class="changelog__item">
-                        <div class="changelog__meta">
+        <h3 class="display-5">RA1G launcher
+            <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
+                <a class="btn btn-primary btn" href="adminpanel/cl-edit.php">Add new</a>
+            <?php } ?>
+        </h3>
+        <hr class="my-4 invisible">
+        <div class="accordion module-accordion" id="module-accordion">
+            <?php foreach ($changelogRLitems as $key => $changelogRLitem) {
+                ?>
+                <div class="module-item card elegant-color-dark text-white">
+                    <div class="module-header card-header" id="module-heading-1">
+                        <h4 class="module-title mb-0">
+                            <a class="card-toggle module-toggle" style="letter-spacing: 3px;" href="#rl<?php echo $link = preg_replace('/\D/', '', $changelogRLitem['version']); ?>" data-toggle="collapse" data-target="#rl<?php echo $link = preg_replace('/\D/', '', $changelogRLitem['version']); ?>" aria-expanded="true" aria-controls="rl<?php echo $link = preg_replace('/\D/', '', $changelogRLitem['version']); ?>">
+                                <i class="module-toggle-icon fas fa-plus mr-2"></i>
+                                v<?php echo  $changelogRLitem['version']; ?> <span class="badge font-small align-middle mx-2 bg-primary"><?php echo $changelogitem['date']; ?></span>
+                            </a>
                             <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
                                 <a href="adminpanel/cl-edit.php?ra1glauncher=<?php echo $changelogRLitem['id']; ?>"
-                                   type="submit" class="btn btn-info btn-sm" style="float: right;"><i
-                                            class="fas fa-edit fa-2x"></i></a>
+                                   class="btn btn-info btn-sm" style="float: right;"><i
+                                            class="fas fa-edit"></i></a>
                                 <a href="changelogs.php?ra1glauncherdelete=<?php echo $changelogRLitem['id']; ?>"
-                                   type="submit" onClick='return confirmSubmit()' class="btn btn-danger btn-sm" style="float: right;"><i
-                                            class="fas fa-window-close fa-2x"></i></a>
+                                   onClick='return confirmSubmit()' class="btn btn-danger btn-sm"
+                                   style="float: right;"><i class="fas fa-window-close"></i></a>
                             <?php } ?>
-                            <h4 class="changelog__title" id="chversion"><span
-                                        class="badge badge-info">v<?php echo $changelogRLitem['version']; ?></span></h4>
-                            <h5 class="changelog__date" id="chdate"><span
-                                        class="badge badge-dark"><?php echo $changelogRLitem['date']; ?></span></h5>
-                        </div>
-                        <div class="changelog__detail">
-                            <?php echo $changelogRLitem['text']; ?>
-                        </div>
-                    </div>
-                    <hr class="my-4">
-                <?php } ?>
-            </div>
+                        </h4>
+                    </div><!--//card-header-->
+                    <div id="rl<?php echo $link = preg_replace('/\D/', '', $changelogRLitem['version']); ?>" class="module-content collapse" aria-labelledby="module-heading-1" >
+                        <div class="card-body p-0">
+                            <div class="module-sub-item p-3">
+                                <div class="row justify-content-between">
+                                    <ul>
+                                        <?php echo $changelogRLitem['text']; ?>
+                                    </ul>
+                                </div>
+                            </div><!--//card-body-->
+                        </div><!--//module-content-->
+                    </div><!--//module-accordion-->
+                </div>
+            <?php } ?>
         </div>
     </div>
     <div class="tab-pane fade" id="website" role="tabpanel" aria-labelledby="website">
-        <h3 class="display-5">Website</h3>
-        <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
-            <a class="btn btn-primary btn-lg" style="float: right;" href="adminpanel/cl-edit.php">Add new</a>
-        <?php } ?>
-        <div class="changelog">
-            <div class="wrapper">
-                <?php foreach ($changelogWEBitems as $key => $changelogWEBitem) {
-                    ?>
-                    <div class="changelog__item">
-                        <div class="changelog__meta">
+        <h3 class="display-5">Website
+            <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
+                <a class="btn btn-primary btn" href="adminpanel/cl-edit.php">Add new</a>
+            <?php } ?>
+        </h3>
+        <hr class="my-4 invisible">
+        <div class="accordion module-accordion" id="module-accordion">
+            <?php foreach ($changelogWEBitems as $key => $changelogWEBitem) {
+                ?>
+                <div class="module-item card elegant-color-dark text-white">
+                    <div class="module-header card-header" id="module-heading-1">
+                        <h4 class="module-title mb-0">
+                            <a class="card-toggle module-toggle" style="letter-spacing: 3px;" href="#web<?php echo $link = preg_replace('/\D/', '', $changelogWEBitem['version']); ?>" data-toggle="collapse" data-target="#web<?php echo $link = preg_replace('/\D/', '', $changelogWEBitem['version']); ?>" aria-expanded="true" aria-controls="web<?php echo $link = preg_replace('/\D/', '', $changelogWEBitem['version']); ?>">
+                                <i class="module-toggle-icon fas fa-plus mr-2"></i>
+                                v<?php echo  $changelogWEBitem['version']; ?> <span class="badge font-small align-middle mx-2 bg-primary"><?php echo $changelogitem['date']; ?></span>
+                            </a>
                             <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
                                 <a href="adminpanel/cl-edit.php?websitechangelog=<?php echo $changelogWEBitem['id']; ?>"
-                                   type="submit"  class="btn btn-info btn-sm" style="float: right;"><i
-                                            class="fas fa-edit fa-2x"></i></a>
+                                   class="btn btn-info btn-sm" style="float: right;"><i
+                                            class="fas fa-edit"></i></a>
                                 <a href="changelogs.php?websitechangelogdelete=<?php echo $changelogWEBitem['id']; ?>"
-                                   type="submit" onClick='return confirmSubmit()'
-                                   class="btn btn-danger btn-sm" style="float: right;"><i class="fas fa-window-close fa-2x"></i></a>
+                                   onClick='return confirmSubmit()' class="btn btn-danger btn-sm"
+                                   style="float: right;"><i class="fas fa-window-close"></i></a>
                             <?php } ?>
-                            <h4 class="changelog__title" id="chversion"><span
-                                        class="badge badge-info">v<?php echo $changelogWEBitem['version']; ?></span></h4>
-                            <h5 class="changelog__date" id="chdate"><span
-                                        class="badge badge-dark"><?php echo $changelogWEBitem['date']; ?></span></h5>
-                        </div>
-                        <div class="changelog__detail">
-                            <?php echo $changelogWEBitem['text']; ?>
-                        </div>
-                    </div>
-                    <hr class="my-4">
-                <?php } ?>
-            </div>
+                        </h4>
+                    </div><!--//card-header-->
+                    <div id="web<?php echo $link = preg_replace('/\D/', '', $changelogWEBitem['version']); ?>" class="module-content collapse" aria-labelledby="module-heading-1" >
+                        <div class="card-body p-0">
+                            <div class="module-sub-item p-3">
+                                <div class="row justify-content-between">
+                                    <ul>
+                                        <?php echo $changelogWEBitem['text']; ?>
+                                    </ul>
+                                </div>
+                            </div><!--//card-body-->
+                        </div><!--//module-content-->
+                    </div><!--//module-accordion-->
+                </div>
+            <?php } ?>
         </div>
     </div>
 </div>
-
+</div>
 </div>
 <?php include_once("footer.php"); ?>
 </body>

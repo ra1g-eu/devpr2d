@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="ico/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
-<title>PeepoRun2D - RA1G Launcher official developer website</title>
+<title>RA1GDev - <?php echo $title; ?></title>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>

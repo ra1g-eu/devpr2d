@@ -1,5 +1,6 @@
 <?php
 include_once("session.php");
+$title = "image gallery";
 include_once("header.php");
 require "incl/config.php";
 $connection = new PDO($dsn, $username, $password, $options);

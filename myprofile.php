@@ -3,6 +3,7 @@ require "incl/config.php";
 if (empty($_SESSION["userid"])) {
     header("Location: index.php");
 }
+$title = "my profile";
 include_once("header.php");
 ?>
 <?php include_once("menu.php");

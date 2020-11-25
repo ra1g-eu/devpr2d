@@ -1,5 +1,6 @@
 <?php
 include_once("session.php");
+$title = "article";
 include_once("header.php");
 require "incl/config.php";
 require "incl/newsconfig.php"; ?>

@@ -1,5 +1,6 @@
 <?php
 include_once("session.php");
+$title = "downloads";
 include_once("header.php");
 include_once("menu.php");
 include_once("incl/adminconfig.php");

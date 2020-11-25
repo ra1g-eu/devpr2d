@@ -1,4 +1,5 @@
 <?php include_once("session.php");
+$title = "official developer website";
 include_once("header.php");
 require "incl/config.php";
 ?>
