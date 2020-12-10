@@ -18,6 +18,10 @@
 <link rel="icon" type="image/png" sizes="96x96" href="ico/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
 <title>RA1GDev - <?php echo $title; ?></title>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/mdb.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">

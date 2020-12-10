@@ -7,17 +7,13 @@
     </div>
 </footer>
 <hr class="my-2">
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/mdb.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script src="js/modalshow.js"></script>
 <script src="js/adminpanel.js"></script>
 <script src="js/checkusername.js"></script>
 <script src="js/reglog.js"></script>
 <script src="js/cookiealert.js"></script>
-<script type="text/javascript" src="js/fancybox.js"></script>
+<script src="js/fancybox.js"></script>
 <script src='js/tinymce/tinymce.min.js'></script>
 <script src='js/show_confirmation.js'></script>
 <script>
