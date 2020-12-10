@@ -132,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         <h4 class="module-title mb-0">
                             <a class="card-toggle module-toggle" style="letter-spacing: 3px;" href="#rl<?php echo $link = preg_replace('/\D/', '', $changelogRLitem['version']); ?>" data-toggle="collapse" data-target="#rl<?php echo $link = preg_replace('/\D/', '', $changelogRLitem['version']); ?>" aria-expanded="true" aria-controls="rl<?php echo $link = preg_replace('/\D/', '', $changelogRLitem['version']); ?>">
                                 <i class="module-toggle-icon fas fa-plus mr-2"></i>
-                                v<?php echo  $changelogRLitem['version']; ?> <span class="badge font-small align-middle mx-2 bg-primary"><?php echo $changelogitem['date']; ?></span>
+                                v<?php echo  $changelogRLitem['version']; ?> <span class="badge font-small align-middle mx-2 bg-primary"><?php echo $changelogRLitem['date']; ?></span>
                             </a>
                             <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
                                 <a href="adminpanel/cl-edit.php?ra1glauncher=<?php echo $changelogRLitem['id']; ?>"
@@ -174,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         <h4 class="module-title mb-0">
                             <a class="card-toggle module-toggle" style="letter-spacing: 3px;" href="#web<?php echo $link = preg_replace('/\D/', '', $changelogWEBitem['version']); ?>" data-toggle="collapse" data-target="#web<?php echo $link = preg_replace('/\D/', '', $changelogWEBitem['version']); ?>" aria-expanded="true" aria-controls="web<?php echo $link = preg_replace('/\D/', '', $changelogWEBitem['version']); ?>">
                                 <i class="module-toggle-icon fas fa-plus mr-2"></i>
-                                v<?php echo  $changelogWEBitem['version']; ?> <span class="badge font-small align-middle mx-2 bg-primary"><?php echo $changelogitem['date']; ?></span>
+                                v<?php echo  $changelogWEBitem['version']; ?> <span class="badge font-small align-middle mx-2 bg-primary"><?php echo $changelogWEBitem['date']; ?></span>
                             </a>
                             <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
                                 <a href="adminpanel/cl-edit.php?websitechangelog=<?php echo $changelogWEBitem['id']; ?>"

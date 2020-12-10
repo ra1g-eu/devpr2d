@@ -26,23 +26,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 ?>
                 <div class="form-group">
                     <label class="col-form-label " for="inputLarge">Menu ID</label>
-                    <input class="form-control " type="text" placeholder="Menu id" id="menuInput" name="menuid" value="<?= $details['idmenu'];?>" readonly="">
+                    <input class="form-control " type="text" placeholder="Menu id" id="menuid" name="menuid" value="<?= $details['idmenu'];?>" readonly="">
                 </div>
                 <div class="form-group">
                     <label class="col-form-label " for="inputLarge">Menu name</label>
-                    <input class="form-control " type="text" placeholder="Menu name" id="menuInput" name="menuname" value="<?= $details['meno'];?>">
+                    <input class="form-control " type="text" placeholder="Menu name" id="menuname" name="menuname" value="<?= $details['meno'];?>">
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="inputLarge">Menu file path</label>
-                    <input class="form-control" type="text" placeholder="Menu name" id="menuInput" name="menufilepath" value="<?= $details['file_path'];?>">
+                    <input class="form-control" type="text" placeholder="Menu name" id="menufilepath" name="menufilepath" value="<?= $details['file_path'];?>">
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="inputLarge">Menu icon <a class="badge badge-info" href="https://fontawesome.com/v4.7.0/icons/">(Click here to see icon codes)</a></label>
-                    <input class="form-control" type="text" placeholder="Menu name" id="menuInput" name="menuicon" value="<?= $details['icon']; ?>">
+                    <input class="form-control" type="text" placeholder="Menu name" id="menuicon" name="menuicon" value="<?= $details['icon']; ?>">
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="inputLarge">Menu order</label>
-                    <input class="form-control" type="text" placeholder="Menu name" id="menuInput" name="menuorder" value="<?= $details['menuorder']; ?>">
+                    <input class="form-control" type="text" placeholder="Menu name" id="menuorder" name="menuorder" value="<?= $details['menuorder']; ?>">
                 </div>
                 <hr class="my-4">
                 <h5>Available actions:</h5>

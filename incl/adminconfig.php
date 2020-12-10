@@ -75,4 +75,10 @@ function getOldGameReleases($conn)
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+function getResourcesRa1g($conn){
+    $sql = "SELECT * FROM resourcespage";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 

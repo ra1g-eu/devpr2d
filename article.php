@@ -6,11 +6,11 @@ require "incl/config.php";
 require "incl/newsconfig.php"; ?>
 <?php include_once("menu.php");
 ?>
-<div class="container py-2">
+<div class="container-fluid w-75">
     <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
         <a class="btn btn-primary btn-lg" style="float: right;" href="adminpanel/news-edit.php">Add new</a>
     <?php } ?>
-    <div class="jumbotron elegant-color text-white"">
+    <div class="jumbotron elegant-color text-white">
         <?php ?>
         <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>
         <?php } ?>
@@ -33,15 +33,14 @@ require "incl/newsconfig.php"; ?>
         ?>
 
         <?php if ($article && !empty($article)) : ?>
-            <div class="jumbotron elegant-color text-white"">
-                <h1 class="display-5" id="newstitle"><?= stripslashes($article['news_title']); ?></h1>
-                <h4 class="changelog__title" id="newsauthor"><span
-                            class="badge badge-info">Author: <?= stripslashes($article['news_author']); ?></span></h4>
-                <h5 class="changelog__date" id="newsdate"><span
-                            class="badge badge-dark"><?= $article['news_published_on']; ?></span></h5>
-                <br class="lead mb-lg-1">
+            <div class="jumbotron elegant-color text-white shadow-lg">
+                <h1 class="display-5 text-center font-weight-bold" id="newstitle"><?= stripslashes($article['news_title']); ?></h1>
+                <h4 class="changelog__title text-center" id="newsauthor"><span
+                            class="badge unique-color"><?= stripslashes($article['news_author']); ?> | <?= $article['news_published_on']; ?></span></h4>
+                <hr class="py-3 invisible">
                     <?= $article['news_full_content']; ?>
-                <hr class="my-4">
+                <hr class="my-5 invisible">
+                <hr class="unique-color">
                 Category: <a href="newscat.php?nc=<?= stripslashes($article['news_category']); ?>"
                              class="text-success"><?= stripslashes($article['news_category']); ?></a>
                 <?php if (isset($_SESSION['userid']) && ($user->role) == 'admin') { ?>

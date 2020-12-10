@@ -28,15 +28,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../devpeeporunfun" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/incl" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\devpr2d\incl" />
+      <recent name="C:\xampp\htdocs\devpr2d" />
+      <recent name="C:\xampp\htdocs\devpr2d\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\devpr2d\adminpanel" />
       <recent name="C:\xampp\htdocs\devpr2d" />
       <recent name="C:\xampp\htdocs\devpr2d\incl" />
-      <recent name="C:\xampp\htdocs\devpr2d\adminpanel" />
       <recent name="C:\xampp\htdocs\devpr2d\css" />
     </key>
   </component>
@@ -82,7 +87,16 @@
       <workItem from="1606140073013" duration="56000" />
       <workItem from="1606164489657" duration="5441000" />
       <workItem from="1606214197361" duration="2634000" />
-      <workItem from="1606309673443" duration="4670000" />
+      <workItem from="1606309673443" duration="11211000" />
+      <workItem from="1606405765043" duration="4867000" />
+      <workItem from="1606580826890" duration="6384000" />
+      <workItem from="1606743648861" duration="4959000" />
+      <workItem from="1606821347138" duration="3728000" />
+      <workItem from="1606857571872" duration="48000" />
+      <workItem from="1606859840513" duration="2736000" />
+      <workItem from="1607268644867" duration="2965000" />
+      <workItem from="1607286166255" duration="4000" />
+      <workItem from="1607439182894" duration="6512000" />
     </task>
     <servers />
   </component>
@@ -98,22 +112,23 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="718" y="395" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@0.0.1920.1050" timestamp="1604505368412" />
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1606310839656">
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1606840486245">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@0.0.1920.1050" timestamp="1605536530571" />
-    <state x="740" y="280" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1606310839656" />
+    <state x="740" y="280" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1606840486245" />
     <state x="775" y="248" key="NewPhpClassDialog" timestamp="1603191474953">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="775" y="248" key="NewPhpClassDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1603191474953" />
-    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1605794266233">
+    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1607268741341">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="794" y="448" key="NewPhpFileDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1603195402335" />
     <state x="-1126" y="448" key="NewPhpFileDialog/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@-1920.0.1920.1050" timestamp="1603355060797" />
     <state x="794" y="448" key="NewPhpFileDialog/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@0.0.1920.1050" timestamp="1605456864577" />
-    <state x="794" y="448" key="NewPhpFileDialog/1920.0.1920.1050/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1605794266233" />
+    <state x="794" y="448" key="NewPhpFileDialog/1920.0.1920.1050/-1920.0.1536.834/0.0.1920.1050@0.0.1920.1050" timestamp="1606406026228" />
+    <state x="794" y="448" key="NewPhpFileDialog/1920.0.1920.1050/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1607268741341" />
     <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606168212538">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -122,5 +137,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/-1920.0.1920.1050/0.0.1920.1050/1920.0.1536.834@0.0.1920.1050" timestamp="1605111360149" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1607269137605">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1607269137605" />
   </component>
 </project>

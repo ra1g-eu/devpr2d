@@ -70,61 +70,68 @@ if (empty($_SESSION['userid']) || ($user->role) == 'basic' || ($user->role == 'b
                 <ul class="app-menu list-unstyled accordion" id="menu-accordion">
                     <li class="nav-item">
                         <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                        <a class="nav-link" href="../adminpanel/">
+                        <?php if (strpos($_SERVER['PHP_SELF'], 'index.php')) $code = ' active'; else $code = ''; ?>
+                        <a class="nav-link <?php echo $code; ?>" href="../adminpanel/">
 						        <span class="nav-icon"><i class="fa fa-home"></i></span>
                             <span class="nav-link-text">Admin Index</span>
                         </a><!--//nav-link-->
                     </li><!--//nav-item-->
                     <li class="nav-item">
                         <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                        <a class="nav-link" href="../adminpanel/">
+                        <a class="nav-link" href="">
 						        <span class="nav-icon"><i class="fa fa-list"></i></span>
                             <span class="nav-link-text">WIP</span>
                         </a><!--//nav-link-->
                     </li><!--//nav-item-->
                     <!-- MENU ITEM -->
+                    <?php if (strpos($_SERVER['PHP_SELF'], 'userspage.php')) $code = ' active'; else $code = ''; ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="userspage.php">
+                        <a class="nav-link<?php echo $code; ?>" href="userspage.php">
 						        <span class="nav-icon"><i class="fa fa-address-card"></i></span>
                             <span class="nav-link-text">Show users</span>
                         </a><!--//nav-link-->
                     </li><!--//nav-item-->
                     <!-- MENU ITEM END-->
                     <!-- MENU ITEM -->
+                    <?php if (strpos($_SERVER['PHP_SELF'], 'menupage.php')) $code = ' active'; else $code = ''; ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="menupage.php">
+                        <a class="nav-link<?php echo $code; ?>" href="menupage.php">
                             <span class="nav-icon"><i class="fa fa-bars"></i></span>
                             <span class="nav-link-text">Show menu</span>
                         </a><!--//nav-link-->
                     </li><!--//nav-item-->
                     <!-- MENU ITEM END-->
                     <!-- MENU ITEM -->
+                    <?php if (strpos($_SERVER['PHP_SELF'], 'cl-edit.php')) $code = ' active'; else $code = ''; ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="cl-edit.php">
+                        <a class="nav-link<?php echo $code; ?>" href="cl-edit.php">
                             <span class="nav-icon"><i class="fa fa-edit"></i></span>
                             <span class="nav-link-text">Changelog Editor</span>
                         </a><!--//nav-link-->
                     </li><!--//nav-item-->
                     <!-- MENU ITEM END-->
                     <!-- MENU ITEM -->
+                    <?php if (strpos($_SERVER['PHP_SELF'], 'image-edit.php')) $code = ' active'; else $code = ''; ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="image-edit.php">
+                        <a class="nav-link<?php echo $code; ?>" href="image-edit.php">
                             <span class="nav-icon"><i class="fa fa-edit"></i></span>
                             <span class="nav-link-text">Image Editor</span>
                         </a><!--//nav-link-->
                     </li><!--//nav-item-->
                     <!-- MENU ITEM END-->
                     <!-- MENU ITEM -->
+                    <?php if (strpos($_SERVER['PHP_SELF'], 'news-edit.php')) $code = ' active'; else $code = ''; ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="news-edit.php">
+                        <a class="nav-link<?php echo $code; ?>" href="news-edit.php">
                             <span class="nav-icon"><i class="fa fa-edit"></i></span>
                             <span class="nav-link-text">Article Editor</span>
                         </a><!--//nav-link-->
                     </li><!--//nav-item-->
                     <!-- MENU ITEM END-->
                     <!-- MENU ITEM -->
+                    <?php if (strpos($_SERVER['PHP_SELF'], 'download-edit.php')) $code = ' active'; else $code = ''; ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="download-edit.php">
+                        <a class="nav-link<?php echo $code; ?>" href="download-edit.php">
                             <span class="nav-icon"><i class="fa fa-download"></i></span>
                             <span class="nav-link-text">Download Editor</span>
                         </a><!--//nav-link-->
@@ -138,6 +145,29 @@ if (empty($_SESSION['userid']) || ($user->role) == 'basic' || ($user->role == 'b
                             <span class="nav-link-text">Information</span>
                         </a><!--//nav-link-->
                     </li><!--//nav-item-->
+                    <hr>
+                    <p class="my-0 py-0 bg-info text-center text-white font-weight-bold"><span class="bg-info">Letecké Testy Section</span></p>
+                    <!-- MENU ITEM -->
+                    <?php if (strpos($_SERVER['PHP_SELF'], 'letecketesty-cl-edit.php')) $code = ' active'; else $code = ''; ?>
+                    <li class="nav-item">
+                        <a class="nav-link<?php echo $code; ?>" href="letecketesty-cl-edit.php">
+                            <span class="nav-icon"><i class="fa fa-download"></i></span>
+                            <span class="nav-link-text">Letecké Testy Editor</span>
+                        </a><!--//nav-link-->
+                    </li><!--//nav-item-->
+                    <hr>
+                    <!-- MENU ITEM END-->
+                    <p class="my-0 py-0 bg-warning text-center text-black-50 font-weight-bold"><span class="bg-warning text-black-50">Resources Section</span></p>
+                    <!-- MENU ITEM -->
+                    <?php if (strpos($_SERVER['PHP_SELF'], 'resourcespage.php')) $code = ' active'; else $code = ''; ?>
+                    <li class="nav-item">
+                        <a class="nav-link<?php echo $code; ?>" href="resourcespage.php">
+                            <span class="nav-icon"><i class="fa fa-database"></i></span>
+                            <span class="nav-link-text">Resources Editor</span>
+                        </a><!--//nav-link-->
+                    </li><!--//nav-item-->
+                    <hr>
+                    <!-- MENU ITEM END-->
                 </ul><!--//app-menu-->
             </nav><!--//app-nav-->
             <div class="app-sidepanel-footer">

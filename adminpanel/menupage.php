@@ -117,19 +117,20 @@ include_once("modal.php");
                     </div><!--//app-card-->
                 </div><!--//tab-pane-->
             </div>
-            <button type="button" class="btn-lg btn-block btn-success" data-toggle="modal" data-target="#menuAddBox">
+            <button type="button" class="btn-lg btn-block btn-success" data-toggle="modal" data-target="#menuAddNewBox">
                 Create new menu  <i class="fa fa-check-square-o"></i>
             </button>
         </div><!--//app-wrapper-->
-        <div class="modal fade" id="menuBox" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    </div>
+</div>
+        <div class="modal fade" id="menuBox" tabindex="-1" role="dialog" aria-labelledby="menuBox" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="menuAddBox" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="menuAddNewBox" tabindex="-1" role="dialog" aria-labelledby="menuAddNewBox" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content bg-info text-white">
                         <div class="modal-header">
@@ -142,22 +143,22 @@ include_once("modal.php");
                             <form action="menupage.php" method="post" name="addmenuform">
                                 <div class="form-group">
                                     <label class="col-form-label " for="inputLarge">Menu name</label>
-                                    <input class="form-control " type="text" placeholder="Menu name" id="menuInput" name="menunameA" value="">
+                                    <input class="form-control " type="text" placeholder="Menu name" id="menunameA" name="menunameA" value="">
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="inputLarge">Menu file path</label>
-                                    <input class="form-control" type="text" placeholder="Menu file path" id="menuInput" name="menufilepathA" value="">
+                                    <input class="form-control" type="text" placeholder="Menu file path" id="menufilepathA" name="menufilepathA" value="">
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="inputLarge">Menu icon <a class="badge bg-danger"
                                                                                                 href="https://fontawesome.com/v4.7.0/icons/">(Click
                                             here to see icon codes)</a></label>
                                     <input class="form-control" type="text" placeholder="Menu icon (Example: fa fa-refresh)"
-                                           id="menuInput" name="menuiconA" value="">
+                                           id="menuiconA" name="menuiconA" value="">
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="inputLarge">Menu order</label>
-                                    <input class="form-control" type="text" placeholder="Menu order" id="menuInput" name="menuorderA" value="">
+                                    <input class="form-control" type="text" placeholder="Menu order" id="menuorderA" name="menuorderA" value="">
                                 </div>
                                 <div class="modal-body">
                                 <button type="submit" name="addnewmenu" class="btn btn-success btn-block">Add new <i
@@ -169,6 +170,5 @@ include_once("modal.php");
                 </div>
             </div>
         </div>
-
         <?php include_once("adminfooter.php"); ?>
 

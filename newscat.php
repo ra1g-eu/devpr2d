@@ -26,18 +26,16 @@ if (isset($_GET['nc'])) {
         <h1 class="display-5">News <?php if ($ncisset) { ?>category: <span
                     class="badge-success"><?= $catname ?></span> <?php } ?></h1>
         <hr class="my-4">
-        <div class="changelog">
-            <div class="wrapper">
+
                 <?php if ($news && !empty($news)) : ?>
                     <?php foreach ($news as $key => $article) : ?>
-                        <div class="alert alert-secondary mb-lg-5 border-primary elegant-color text-white">
-                            <h3><a class=""
-                                   href="article.php?newsid=<?= $article['news_id']; ?>"><?= stripslashes($article['news_title']); ?></a>
-                            </h3>
+                        <div class="alert alert-secondary mb-lg-5 border-dark shadow elegant-color-dark text-white">
+                            <h2><a href="article.php?newsid=<?= $article['news_id']; ?>"><?= stripslashes($article['news_title']); ?></a>
+                            </h2>
                             <h6>
-                                <span class="badge-dark"><?= $article['news_published_on']; ?> - <?= stripslashes($article['news_author']); ?> - <a
+                                <span class="badge bg-primary"><?= $article['news_published_on']; ?> - <?= stripslashes($article['news_author']); ?> - <a
                                             href="newscat.php?nc=<?= stripslashes($article['news_category']); ?>"
-                                            class="text-success"><?= stripslashes($article['news_category']); ?></a></span>
+                                            class="text-dark"><?= stripslashes($article['news_category']); ?></a></span>
                             </h6>
                             <br>
                             <p class="lead"><?= stripslashes($article['news_short_description']); ?></p>
@@ -53,8 +51,7 @@ if (isset($_GET['nc'])) {
                         <hr class="my-lg-5">
                     <?php endforeach ?>
                 <?php endif ?>
-            </div>
-        </div>
+
     </div>
 </div>
 <?php include_once("footer.php"); ?>

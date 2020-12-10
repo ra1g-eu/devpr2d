@@ -7,7 +7,7 @@
 </footer><!--//app-footer-->
 
 <!-- Javascript -->
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script src="assets/plugins/popper.min.js"></script>
@@ -44,6 +44,13 @@
             "columnDefs": [
                 { "orderable": false, "targets": [6] },
                 { "orderable": true, "targets": [0, 1, 2, 3, 4, 5] }
+            ]
+        });
+        $('#resourcestable').DataTable({
+            paging: true,
+            "columnDefs": [
+                { "orderable": false, "targets": [10] },
+                { "orderable": true, "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] }
             ]
         });
     });
