@@ -27,7 +27,7 @@ $(document).ready(function() {
                     $('span#signingin').hide();
                     $('div#signresult').fadeIn(100).show().html(data);
                     sleep(1100).then(() => {
-                        (window.location = "index.php")
+                        (window.location = "myprofile.php")
                     });
                 }
             })
@@ -77,7 +77,7 @@ $(document).ready(function() {
                         $('span#registering').hide();
                         $('div#registerresult').fadeIn(100).show().html(data);
                         sleep(1100).then(() => {
-                            (window.location = "index.php")
+                            (window.location = "myprofile.php")
                         });
                     }
                 })
